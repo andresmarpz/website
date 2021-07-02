@@ -5,7 +5,8 @@ module.exports = {
         return [
             {
                 source: '/bookmarks',
-                destination: 'bookmarks.andres.run'
+                destination: 'bookmarks.andres.run',
+                permanent: true
             }
         ];
     }
