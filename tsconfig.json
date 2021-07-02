@@ -16,9 +16,15 @@
         "baseUrl": ".",
         "paths": {
             "@/components/*": ["components/*"],
-            "@/styles/*": ["styles/*"]
+            "@/styles/*": ["styles/*"],
+            "@/functions/*": ["functions/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "functions/Environment.js"
+    ],
     "exclude": ["node_modules"]
 }
