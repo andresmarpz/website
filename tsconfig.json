@@ -17,14 +17,14 @@
         "paths": {
             "@/components/*": ["components/*"],
             "@/styles/*": ["styles/*"],
-            "@/functions/*": ["functions/*"]
+            "@/helper/*": ["helper/*"]
         }
     },
     "include": [
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
-        "functions/Environment.js"
+        "helper/Environment.js"
     ],
     "exclude": ["node_modules"]
 }

@@ -5,12 +5,12 @@ module.exports = {
         return [
             {
                 source: '/bookmarks',
-                destination: 'http://bookmarks.andres.run',
+                destination: 'https://bookmarks.andres.run',
                 permanent: true
             },
             {
                 source: '/files',
-                destination: 'http://files.andres.run',
+                destination: 'https://files.andres.run',
                 permanent: true
             }
         ];
