@@ -16,6 +16,8 @@ body {
     font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
         Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
         sans-serif;
+
+    background-color: rgb(14, 14, 14);
 }
 
 a {
@@ -29,10 +31,11 @@ a:hover {
 
 h1 {
     color: white;
+    margin-bottom: 0;
 }
 
 h2 {
-    color: rgb(175, 175, 175);
+    color: rgb(160, 160, 160);
     margin: 0 0 6rem;
 }
 

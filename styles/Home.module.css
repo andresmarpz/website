@@ -10,6 +10,10 @@
     background-color: rgb(14, 14, 14);
 }
 
+.container > * {
+    text-align: center;
+}
+
 .main {
     padding: 5rem 0;
     flex: 1;
