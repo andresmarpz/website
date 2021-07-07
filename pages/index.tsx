@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '@/styles/Home.module.scss';
+import styles from '@/styles/Home.module.css';
 import isDev from '@/helper/Environment';
+
+import Container from '@/components/Container';
 
 export default function Home() {
     return (
@@ -65,6 +67,7 @@ export default function Home() {
                     </a>
                 </div>
             </main>
+            <Container />
 
             <footer className={styles.footer}>
                 <a
