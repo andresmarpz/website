@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
     font-family: 'Inter';
     font-style: normal;
@@ -18,25 +22,6 @@ body {
         sans-serif;
 
     background-color: rgb(14, 14, 14);
-}
-
-a {
-    color: rgb(38, 130, 235);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-h1 {
-    color: white;
-    margin-bottom: 0;
-}
-
-h2 {
-    color: rgb(160, 160, 160);
-    margin: 0 0 6rem;
 }
 
 * {
