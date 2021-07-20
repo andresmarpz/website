@@ -82,6 +82,7 @@ export default function Home({ projects }: props) {
                         {/* <h2>This is my personal playground</h2> */}
                         {projects.map((project) => (
                             <Project
+                                key={project.title}
                                 title={project.title}
                                 description={project.description}
                                 link={project.link}
