@@ -7,10 +7,15 @@ const Project = (props: {
     description: string;
     link: string;
     icon?: string;
+    className?: string;
 }) => {
     return (
-        <a href={props.link}>
-            <div className="border border-gray-200 rounded p-4 text-gray-600">
+        <a href={props.link} className="h-10">
+            <div
+                className={
+                    'border border-gray-200 rounded p-4 text-gray-600 h-28 mt-4 overflow-hidden' +
+                    (props.className === undefined ? '' : props.className)
+                }>
                 <div className="flex">
                     {props.icon !== undefined ? (
                         <Image src={props.icon} width={24} height={24} />

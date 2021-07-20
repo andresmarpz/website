@@ -78,9 +78,12 @@ export default function Home({ projects }: props) {
                     <h2 className="text-gray-900 text-2xl font-bold mt-16">
                         Things I'm working on
                     </h2>
-                    <div className="mt-3">
-                        {/* <h2>This is my personal playground</h2> */}
-                        {projects.map((project) => (
+                    <div>
+                        <h2 className="text-gray-600 text-lg">
+                            This is my personal playground where I make and host
+                            most of my projects, and these are some of them.
+                        </h2>
+                        {projects.map((project, index) => (
                             <Project
                                 key={project.title}
                                 title={project.title}
