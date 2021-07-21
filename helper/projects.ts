@@ -7,6 +7,7 @@ export interface project {
     description: string;
     link: string;
     icon?: string;
+    index: number;
 }
 
 export async function getProjects() {
@@ -20,5 +21,6 @@ export async function getProjects() {
         projects.push(project);
     });
 
+    projects.sort((a: project, b: project) => (a.index > b.index ? -1 : 1));
     return projects;
 }

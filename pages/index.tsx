@@ -30,12 +30,12 @@ export default function Home({ projects }: props) {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
 
-                <main className="px-5 bg-white w-full max-w-4xl h-screen">
+                <main className="px-5 bg-white w-full lg:max-w-4xl h-screen min-w-320">
                     <h1 className="text-gray-900 text-5xl font-bold mt-24">
                         Hello! I'm Andrew.
                     </h1>
                     <h2 className="text-gray-600 text-lg mt-3">
-                        I'm a Software Engineer based in Uruguay, though I
+                        I'm a Software Engineer living in Uruguay, though I
                         mainly focus in front-end development since I'm into
                         UI/UX design. I enjoy using <b>TypeScript</b> /{' '}
                         <b>React</b> with <b>Nextjs</b> and <b>Tailwind CSS</b>.
@@ -45,6 +45,7 @@ export default function Home({ projects }: props) {
                             src="https://avatars.githubusercontent.com/u/78830288?v=4"
                             width={40}
                             height={40}
+                            alt={'github avatar'}
                             className="rounded-full"
                         />
                         <div className="flex items-center ml-3">
@@ -52,6 +53,7 @@ export default function Home({ projects }: props) {
                                 src="/svgs/github.svg"
                                 width={24}
                                 height={24}
+                                alt={'github logo'}
                             />
                             <a
                                 className="ml-2"
@@ -64,6 +66,7 @@ export default function Home({ projects }: props) {
                                 src="/svgs/twitter.svg"
                                 width={24}
                                 height={24}
+                                alt={'twitter logo'}
                             />
                             <a
                                 className="ml-2"
@@ -92,14 +95,6 @@ export default function Home({ projects }: props) {
                                 icon={project.icon}
                             />
                         ))}
-                    </div>
-
-                    <h2 className="text-gray-900 text-2xl font-bold mt-16">
-                        My links
-                    </h2>
-                    <div>
-                        <a href="/snippets">Snippets</a>: stuff I made and use
-                        often to copy-paste
                     </div>
                 </main>
             </div>
