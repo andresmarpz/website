@@ -1,42 +1,52 @@
 import React from 'react';
 
 import Image from 'next/image';
+import Button from './Button';
 
 const Project = (props: {
     title: string;
     description: string;
-    link: string;
+    link?: string;
+    github?: string;
     icon?: string;
+    image?: string;
     className?: string;
 }) => {
     return (
-        <a href={props.link} target="_blank" rel="noreferrer" className="h-10">
-            <div
-                className={
-                    'border border-gray-200 rounded p-4 text-gray-600 h-full mt-4 overflow-hidden transition duration-200 ease-in-out shadow-sm hover:shadow-md' +
-                    (props.className === undefined ? '' : props.className)
-                }>
-                <div className="flex">
-                    {props.icon !== undefined ? (
+        <div
+            className={
+                'p-4 text-gray-600 h-full overflow-hidden grid grid-rows-project border border-gray-200 rounded' +
+                (props.className === undefined ? '' : props.className)
+            }>
+            <h2 className="text-lg font-semibold text-gray-800">
+                {props.title}
+            </h2>
+
+            <p className="overflow-ellipsis">{props.description}</p>
+            <div className="flex items-center mt-2">
+                {props.link !== undefined ? (
+                    <a href={props.link} target="_blank">
+                        <Button>Live</Button>
+                    </a>
+                ) : (
+                    ''
+                )}
+                {props.github !== undefined ? (
+                    <a
+                        className={props.link !== undefined ? 'ml-3' : ''}
+                        href={props.github}
+                        target="_blank">
                         <Image
-                            src={props.icon}
+                            src={'/svgs/github.svg'}
                             width={24}
                             height={24}
-                            alt={'project icon'}
                         />
-                    ) : (
-                        ''
-                    )}
-                    <h2 className="text-lg font-semibold text-gray-800 ml-2">
-                        {props.title}
-                    </h2>
-                </div>
-
-                <p className="px-1 overflow-ellipsis h-4/5">
-                    {props.description}
-                </p>
+                    </a>
+                ) : (
+                    ''
+                )}
             </div>
-        </a>
+        </div>
     );
 };
 

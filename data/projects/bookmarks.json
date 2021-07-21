@@ -1,7 +1,9 @@
 {
     "title": "Bookmarks",
-    "description": "Website to organize links by collections. This was one of my first projects and it made me learn CRUD and basic backend with expressjs.",
+    "description": "Website to organize links by collections.",
     "link": "https://bookmarks.andres.run/",
+    "github": "https://github.com/andresmarpz/andres.run",
     "icon": "/svgs/bookmark.svg",
+    "image": "/images/projects/bookmarks.png",
     "index": 0
 }

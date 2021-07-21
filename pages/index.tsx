@@ -30,7 +30,7 @@ export default function Home({ projects }: props) {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
 
-                <main className="px-5 bg-white w-full lg:max-w-4xl h-screen min-w-320">
+                <main className="px-5 bg-white w-full max-w-4xl h-screen min-w-320">
                     <h1 className="text-gray-900 text-5xl font-bold mt-24">
                         Hello! I'm Andrew.
                     </h1>
@@ -79,22 +79,25 @@ export default function Home({ projects }: props) {
                     <hr className="mt-4" />
 
                     <h2 className="text-gray-900 text-2xl font-bold mt-16">
-                        Things I'm working on
+                        Projects
                     </h2>
                     <div>
                         <h2 className="text-gray-600 text-lg">
-                            This is my personal playground where I make and host
-                            most of my projects, and these are some of them.
+                            These are some of my personal projects:
                         </h2>
-                        {projects.map((project, index) => (
-                            <Project
-                                key={project.title}
-                                title={project.title}
-                                description={project.description}
-                                link={project.link}
-                                icon={project.icon}
-                            />
-                        ))}
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 mt-6">
+                            {projects.map((project, index) => (
+                                <Project
+                                    key={project.title}
+                                    title={project.title}
+                                    description={project.description}
+                                    link={project.link}
+                                    github={project.github}
+                                    icon={project.icon}
+                                    image={project.image}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </main>
             </div>

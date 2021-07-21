@@ -5,8 +5,10 @@ const root = process.cwd();
 export interface project {
     title: string;
     description: string;
-    link: string;
+    link?: string;
+    github?: string;
     icon?: string;
+    image?: string;
     index: number;
 }
 

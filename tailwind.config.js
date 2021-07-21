@@ -8,6 +8,9 @@ module.exports = {
         extend: {},
         minWidth: {
             320: '320px'
+        },
+        gridTemplateRows: {
+            project: '0.1fr 1fr 0.2fr'
         }
     },
     variants: {
