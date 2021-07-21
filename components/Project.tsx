@@ -25,7 +25,7 @@ const Project = (props: {
             <p className="overflow-ellipsis">{props.description}</p>
             <div className="flex items-center mt-2">
                 {props.link !== undefined ? (
-                    <a href={props.link} target="_blank">
+                    <a href={props.link} target="_blank" rel="noreferrer">
                         <Button>Live</Button>
                     </a>
                 ) : (
@@ -35,11 +35,13 @@ const Project = (props: {
                     <a
                         className={props.link !== undefined ? 'ml-3' : ''}
                         href={props.github}
-                        target="_blank">
+                        target="_blank"
+                        rel="noreferrer">
                         <Image
                             src={'/svgs/github.svg'}
                             width={24}
                             height={24}
+                            alt={'github logo'}
                         />
                     </a>
                 ) : (
