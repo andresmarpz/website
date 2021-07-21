@@ -10,7 +10,7 @@ const Project = (props: {
     className?: string;
 }) => {
     return (
-        <a href={props.link} target="_blank" className="h-10">
+        <a href={props.link} target="_blank" rel="noreferrer" className="h-10">
             <div
                 className={
                     'border border-gray-200 rounded p-4 text-gray-600 h-full mt-4 overflow-hidden transition duration-200 ease-in-out shadow-sm hover:shadow-md' +
