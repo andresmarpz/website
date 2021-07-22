@@ -2,7 +2,7 @@
     "title": "Bookmarks",
     "description": "Website to organize links by collections.",
     "link": "https://bookmarks.andres.run/",
-    "github": "https://github.com/andresmarpz/andres.run",
+    "github": "https://github.com/andresmarpz/bookmarks",
     "icon": "/svgs/bookmark.svg",
     "image": "/images/projects/bookmarks.png",
     "index": 0
