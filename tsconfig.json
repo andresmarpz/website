@@ -21,6 +21,6 @@
             "@/data/*": ["data/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "helper/projects.js"],
     "exclude": ["node_modules"]
 }
