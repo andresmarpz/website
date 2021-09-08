@@ -35,10 +35,10 @@ export default function Home({ projects }: props) {
                         Hello! I'm Andrew.
                     </h1>
                     <h2 className="text-gray-600 text-lg mt-3">
-                        I'm a Software Engineer living in Uruguay, though I
-                        mainly focus in front-end development since I'm into
-                        UI/UX design. I enjoy using <b>TypeScript</b> /{' '}
-                        <b>React</b> with <b>Nextjs</b> and <b>Tailwind CSS</b>.
+                        I'm a Frontend Developer from Uruguay. I enjoy designing
+                        and developing UIs. My go-to stack is <b>TypeScript</b>{' '}
+                        / <b>React</b> with <b>Nextjs</b> and{' '}
+                        <b>Tailwind CSS</b>.
                     </h2>
                     <div className="mt-8 flex items-center">
                         <Image
@@ -85,7 +85,7 @@ export default function Home({ projects }: props) {
                         <h2 className="text-gray-600 text-lg">
                             These are some of my personal projects:
                         </h2>
-                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 mt-6">
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 mt-6 pb-10">
                             {projects.map((project, index) => (
                                 <Project
                                     key={project.title}
