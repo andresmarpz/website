@@ -1,1 +1,1 @@
-export const domain: string = 'andres.run';
+export const domain: string = 'andresmarpz.com';

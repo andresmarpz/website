@@ -1,15 +1,15 @@
 {
-    "name": "andres.run",
+    "name": "andresmarpz.com",
     "description": "personal website",
     "version": "0.0.1",
     "author": {
         "name": "Andres Martinez",
         "email": "andresmarpz@gmail.com",
-        "url": "https://andres.run"
+        "url": "https://andresmarpz.com"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/andresmarpz/andres.run.git"
+        "url": "git+https://github.com/andresmarpz/andresmarpz.com.git"
     },
     "scripts": {
         "dev": "next",

@@ -14,11 +14,11 @@
     "redirects": [
         {
             "source": "/bookmarks",
-            "destination": "https://bookmarks.andres.run"
+            "destination": "https://bookmarks.andresmarpz.com"
         },
         {
             "source": "/files",
-            "destination": "https://files.andres.run"
+            "destination": "https://files.andresmarpz.com"
         },
         {
             "source": "/resume",
