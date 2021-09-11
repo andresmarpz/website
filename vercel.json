@@ -19,6 +19,18 @@
         {
             "source": "/files",
             "destination": "https://files.andres.run"
+        },
+        {
+            "source": "/resume",
+            "destination": "/andres-martinez-2021.pdf"
+        },
+        {
+            "source": "/cv",
+            "destination": "/andres-martinez-2021.pdf"
+        },
+        {
+            "source": "/innovid",
+            "destination": "https://github.com/andresmarpz/innovid-challenge"
         }
     ]
 }
