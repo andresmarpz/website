@@ -1,9 +1,9 @@
+import { getProjects, project } from '@/helper/projects';
+
 import Head from 'next/head';
 import Image from 'next/image';
-import Layout from '@/components/Layout';
-
-import { getProjects, project } from '@/helper/projects';
 import Project from '@/components/Project';
+import Social from '@/components/Social';
 
 interface props {
     projects: project[];
@@ -19,66 +19,57 @@ export async function getStaticProps() {
 
 export default function Home({ projects }: props) {
     return (
-        <Layout>
-            <div className="flex justify-center">
-                <Head>
-                    <title>Andrés Martínez</title>
-                    <meta
-                        name="description"
-                        content="andres martinez personal website andresmarpz uruguay"
+        <>
+            <Head>
+                <title>Andrés Martínez</title>
+                <meta
+                    name="description"
+                    content="andres martinez personal website andresmarpz uruguay"
+                />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+
+            <main>
+                <h1 className="text-gray-900 text-5xl font-bold mt-20">
+                    Hello! I'm Andrew.
+                </h1>
+                <h2 className="text-gray-600 text-lg mt-3">
+                    I'm a Frontend Developer from Uruguay. I enjoy designing and
+                    developing UIs. My go-to stack is <b>TypeScript</b> /{' '}
+                    <b>React</b> with <b>Nextjs</b> and <b>Tailwind CSS</b>.
+                </h2>
+                <div className="mt-8 flex items-center">
+                    <Image
+                        src="https://avatars.githubusercontent.com/u/78830288?v=4"
+                        width={40}
+                        height={40}
+                        alt={'github avatar'}
+                        className="rounded-full"
                     />
-                    <link rel="icon" href="/favicon.ico" />
-                </Head>
+                    <Social
+                        src="/svgs/github.svg"
+                        alt="github logo"
+                        href="https://github.com/andresmarpz"
+                        label="Github"
+                    />
+                    <Social
+                        src="/svgs/twitter.svg"
+                        alt="twitter logo"
+                        href="https://twitter.com/andresmarpz"
+                        label="Twitter"
+                    />
+                    <Social
+                        src="/svgs/linkedin.svg"
+                        alt="linkedin logo"
+                        href="https://linkedin.com/in/andresmarpz"
+                        label="LinkedIn"
+                    />
+                </div>
 
-                <main className="px-5 bg-white w-full max-w-4xl h-screen min-w-320">
-                    <h1 className="text-gray-900 text-5xl font-bold mt-24">
-                        Hello! I'm Andrew.
-                    </h1>
-                    <h2 className="text-gray-600 text-lg mt-3">
-                        I'm a Frontend Developer from Uruguay. I enjoy designing
-                        and developing UIs. My go-to stack is <b>TypeScript</b>{' '}
-                        / <b>React</b> with <b>Nextjs</b> and{' '}
-                        <b>Tailwind CSS</b>.
-                    </h2>
-                    <div className="mt-8 flex items-center">
-                        <Image
-                            src="https://avatars.githubusercontent.com/u/78830288?v=4"
-                            width={40}
-                            height={40}
-                            alt={'github avatar'}
-                            className="rounded-full"
-                        />
-                        <div className="flex items-center ml-3">
-                            <Image
-                                src="/svgs/github.svg"
-                                width={24}
-                                height={24}
-                                alt={'github logo'}
-                            />
-                            <a
-                                className="ml-2"
-                                href="https://github.com/andresmarpz">
-                                Github
-                            </a>
-                        </div>
-                        <div className="flex items-center ml-3">
-                            <Image
-                                src="/svgs/twitter.svg"
-                                width={24}
-                                height={24}
-                                alt={'twitter logo'}
-                            />
-                            <a
-                                className="ml-2"
-                                href="https://twitter.com/andresmarpz">
-                                Twitter
-                            </a>
-                        </div>
-                    </div>
+                <hr className="mt-4" />
 
-                    <hr className="mt-4" />
-
-                    <h2 className="text-gray-900 text-2xl font-bold mt-16">
+                <div className="mt-16">
+                    <h2 className="text-gray-900 text-2xl font-bold">
                         Projects
                     </h2>
                     <div>
@@ -93,14 +84,17 @@ export default function Home({ projects }: props) {
                                     description={project.description}
                                     link={project.link}
                                     github={project.github}
-                                    icon={project.icon}
-                                    image={project.image}
                                 />
                             ))}
                         </div>
                     </div>
-                </main>
-            </div>
-        </Layout>
+                </div>
+                {/* <div className="mt-10">
+                    <h2 className="text-gray-900 text-2xl font-bold">
+                        Snippets
+                    </h2>
+                </div> */}
+            </main>
+        </>
     );
 }

@@ -1,15 +1,13 @@
 import React from 'react';
 
 import Image from 'next/image';
-import Button from './Button';
+import Button from '@/components/Button';
 
 const Project = (props: {
     title: string;
     description: string;
     link?: string;
     github?: string;
-    icon?: string;
-    image?: string;
     className?: string;
 }) => {
     return (

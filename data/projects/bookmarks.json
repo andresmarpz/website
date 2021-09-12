@@ -3,7 +3,5 @@
     "description": "Website to organize links by collections.",
     "link": "https://bookmarks.andresmarpz.com/",
     "github": "https://github.com/andresmarpz/bookmarks",
-    "icon": "/svgs/bookmark.svg",
-    "image": "/images/projects/bookmarks.png",
     "index": 1
 }
