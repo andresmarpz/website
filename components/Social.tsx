@@ -14,7 +14,8 @@ const Social = (props: {
             <a
                 className="ml-2 hover:underline"
                 href={props.href}
-                target="_blank">
+                target="_blank"
+                rel="noreferrer">
                 {props.label}
             </a>
         </div>
