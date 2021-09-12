@@ -7,11 +7,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div>
             <Navigation />
-            <div className="flex justfiy-center">
-                <main className="bg-white w-full max-w-4xl h-screen min-w-320 mx-12">
+            <div className="flex justify-center">
+                <div className="flex justfiy-center bg-white w-full max-w-4xl h-screen min-w-320 m-auto mx-12">
                     {children}
                     <Footer />
-                </main>
+                </div>
             </div>
         </div>
     );
