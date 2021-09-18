@@ -5,15 +5,15 @@ import Footer from '@/components/Footer';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div>
+        <main className="mx-5">
             <Navigation />
-            <div className="flex justify-center">
-                <div className="flex justfiy-center bg-white w-full max-w-4xl h-screen min-w-320 m-auto mx-12">
-                    {children}
+            <div className="flex flex-col items-center">
+                <div className="flex flex-col justfiy-center w-full max-w-4xl m-auto mx-5">
+                    <div className="flex-1">{children}</div>
                     <Footer />
                 </div>
             </div>
-        </div>
+        </main>
     );
 };
 

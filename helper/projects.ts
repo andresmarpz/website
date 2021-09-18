@@ -12,7 +12,7 @@ export interface project {
     index: number;
 }
 
-export async function getProjects() {
+export function getProjects(amount?: number) {
     const dir = fs.readdirSync(root + '/data/projects');
     const projects: project[] = [];
     dir.forEach((label) => {
@@ -24,5 +24,7 @@ export async function getProjects() {
     });
 
     projects.sort((a: project, b: project) => (a.index > b.index ? 1 : -1));
-    return projects;
+    return amount === undefined
+        ? projects
+        : projects.slice(0, Math.min(projects.length, amount));
 }

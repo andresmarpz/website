@@ -21,6 +21,7 @@
         "autoprefixer": "^10.2.6",
         "fs": "^0.0.1-security",
         "next": "11.0.1",
+        "nprogress": "^0.2.0",
         "postcss": "^8.3.5",
         "react": "17.0.2",
         "react-dom": "17.0.2",
@@ -28,6 +29,7 @@
         "tailwindcss": "^2.2.4"
     },
     "devDependencies": {
+        "@types/nprogress": "^0.2.0",
         "@types/react": "17.0.13",
         "eslint": "7.29.0",
         "eslint-config-next": "11.0.1",

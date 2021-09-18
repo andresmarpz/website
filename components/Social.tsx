@@ -9,7 +9,7 @@ const Social = (props: {
     label: string;
 }) => {
     return (
-        <div className="flex items-center ml-4">
+        <div className="flex items-center">
             <Image src={props.src} width={24} height={24} alt={props.alt} />
             <a
                 className="ml-2 hover:underline"

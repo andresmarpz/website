@@ -1,16 +1,16 @@
 import React from 'react';
 
-import Link from '@/components/Link';
+import Link from '@/components/NavigationLink';
 
 const Navigation = () => {
     return (
-        <div className="bg-white m-auto max-w-4xl p-8 flex justify-between items-center text-gray-800 sticky top-0">
-            <span></span>
-            <span className="flex space-x-6 items-center">
-                <Link label="Snippets" href="/snippets" />
+        <nav className="bg-white max-w-4xl py-8 m-auto flex items-center text-gray-800 sticky top-0 z-10">
+            <span className="flex gap-6 items-center">
                 <Link label="Home" href="/" />
+                <Link label="Work" href="/work" />
+                <Link label="Talk" href="/talk" />
             </span>
-        </div>
+        </nav>
     );
 };
 
