@@ -21,7 +21,10 @@ export default function Work({ projects }: props) {
             <p className="text-lg text-gray-700">
                 Here are some of the things I'm building and learning with. I'm
                 currently open to work offers! You can find me in{' '}
-                <a href="https://linkedin.com/in/andresmarpz" target="_blank">
+                <a
+                    href="https://linkedin.com/in/andresmarpz"
+                    target="_blank"
+                    rel="noreferrer">
                     <strong className="hover:underline">LinkedIn</strong>
                 </a>{' '}
                 or email me at <strong>andresmarpz@gmail.com</strong>.
