@@ -2,7 +2,7 @@ import fs from 'fs';
 
 const root = process.cwd();
 
-export interface project {
+export interface Project {
     title: string;
     description: string;
     link?: string;
@@ -14,16 +14,16 @@ export interface project {
 
 export function getProjects(amount?: number) {
     const dir = fs.readdirSync(root + '/data/projects');
-    const projects: project[] = [];
+    const projects: Project[] = [];
     dir.forEach((label) => {
         const file = fs
             .readFileSync(root + '/data/projects/' + label)
             .toString();
-        const project: project = JSON.parse(file);
+        const project: Project = JSON.parse(file);
         projects.push(project);
     });
 
-    projects.sort((a: project, b: project) => (a.index > b.index ? 1 : -1));
+    projects.sort((a: Project, b: Project) => (a.index > b.index ? 1 : -1));
     return amount === undefined
         ? projects
         : projects.slice(0, Math.min(projects.length, amount));

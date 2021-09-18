@@ -19,8 +19,10 @@
     },
     "dependencies": {
         "autoprefixer": "^10.2.6",
+        "axios": "^0.21.4",
         "fs": "^0.0.1-security",
         "next": "11.0.1",
+        "nodemailer": "^6.6.3",
         "nprogress": "^0.2.0",
         "postcss": "^8.3.5",
         "react": "17.0.2",
@@ -29,6 +31,7 @@
         "tailwindcss": "^2.2.4"
     },
     "devDependencies": {
+        "@types/nodemailer": "^6.4.4",
         "@types/nprogress": "^0.2.0",
         "@types/react": "17.0.13",
         "eslint": "7.29.0",

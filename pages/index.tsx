@@ -1,12 +1,16 @@
-import { getProjects, project } from '@/helper/projects';
+import { getProjects, Project } from '@/helper/projects';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import Project from '@/components/Project';
+import ProjectCard from '@/components/ProjectCard';
 import Social from '@/components/Social';
 
+import github from '@/public/svgs/github.svg';
+import twitter from '@/public/svgs/twitter.svg';
+import linkedin from '@/public/svgs/linkedin.svg';
+
 interface props {
-    projects: project[];
+    projects: Project[];
 }
 
 export function getStaticProps() {
@@ -23,11 +27,11 @@ export default function Home({ projects }: props) {
             <h1 className="text-gray-900 text-5xl font-bold mt-20">
                 Hello! I'm Andrew.
             </h1>
-            <h2 className="text-gray-600 text-lg mt-3">
+            <p className="text-gray-700 text-lg mt-3">
                 I'm a Frontend Developer from Uruguay. I enjoy designing and
                 developing UIs. The technologies I'm currently into are{' '}
                 <b>TypeScript</b> / <b>Nextjs</b> and <b>Tailwind CSS</b>.
-            </h2>
+            </p>
             <div className="mt-8 flex flex-wrap gap-3 items-center">
                 <Image
                     src="https://avatars.githubusercontent.com/u/78830288?v=4"
@@ -37,19 +41,19 @@ export default function Home({ projects }: props) {
                     className="rounded-full"
                 />
                 <Social
-                    src="/svgs/github.svg"
+                    src={github}
                     alt="github logo"
                     href="https://github.com/andresmarpz"
                     label="Github"
                 />
                 <Social
-                    src="/svgs/twitter.svg"
+                    src={twitter}
                     alt="twitter logo"
                     href="https://twitter.com/andresmarpz"
                     label="Twitter"
                 />
                 <Social
-                    src="/svgs/linkedin.svg"
+                    src={linkedin}
                     alt="linkedin logo"
                     href="https://linkedin.com/in/andresmarpz"
                     label="LinkedIn"
@@ -58,6 +62,7 @@ export default function Home({ projects }: props) {
 
             <hr className="mt-4" />
 
+            {/* Work section */}
             <section className="mt-16">
                 <Link href="/work">
                     <a className="text-gray-900 text-2xl font-bold hover:underline">
@@ -65,28 +70,26 @@ export default function Home({ projects }: props) {
                     </a>
                 </Link>
 
-                <div>
-                    <h2 className="text-gray-600 text-lg">
-                        These are some of the projects I like the most. You can
-                        find more of what I'm building{' '}
-                        <Link href="/work">
-                            <a className="hover:underline">
-                                <b>here</b>
-                            </a>
-                        </Link>
-                        !
-                    </h2>
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 mt-6 pb-10">
-                        {projects.map((project) => (
-                            <Project
-                                key={project.title}
-                                title={project.title}
-                                description={project.description}
-                                link={project.link}
-                                github={project.github}
-                            />
-                        ))}
-                    </div>
+                <p className="text-gray-700 text-lg">
+                    These are some of the projects I like the most. You can find
+                    more of what I'm building{' '}
+                    <Link href="/work">
+                        <a className="hover:underline">
+                            <b>here</b>
+                        </a>
+                    </Link>
+                    !
+                </p>
+                <div className="grid grid-cols-1 gap-4 mt-6 pb-10">
+                    {projects.map((project) => (
+                        <ProjectCard
+                            key={project.title}
+                            title={project.title}
+                            description={project.description}
+                            link={project.link}
+                            github={project.github}
+                        />
+                    ))}
                 </div>
             </section>
             {/* <section className="mt-10">
