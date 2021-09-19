@@ -11,6 +11,9 @@ module.exports = {
         },
         gridTemplateRows: {
             project: '0.1fr 1fr 0.2fr'
+        },
+        minHeight: {
+            page: '720px'
         }
     },
     variants: {

@@ -1,6 +1,7 @@
 import { getProjects, Project } from '@/helper/projects';
 
 import ProjectCard from '@/components/ProjectCard';
+import Link from 'next/link';
 
 interface props {
     projects: Project[];
@@ -20,14 +21,13 @@ export default function Work({ projects }: props) {
             <h1 className="text-2xl font-bold text-black">Work</h1>
             <p className="text-lg text-gray-700">
                 Here are some of the things I'm building and learning with. I'm
-                currently open to work offers! You can find me in{' '}
-                <a
-                    href="https://linkedin.com/in/andresmarpz"
-                    target="_blank"
-                    rel="noreferrer">
-                    <strong className="hover:underline">LinkedIn</strong>
-                </a>{' '}
-                or email me at <strong>andresmarpz@gmail.com</strong>.
+                currently open to work offers! You can contact me through{' '}
+                <Link href="/talk">
+                    <a>
+                        <b>/talk</b>
+                    </a>
+                </Link>
+                .
             </p>
             <br />
             <a

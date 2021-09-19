@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <Navigation />
             <div className="flex flex-col items-center">
                 <div className="flex flex-col justfiy-center w-full max-w-3xl m-auto mx-5">
-                    <div className="flex-1">{children}</div>
+                    <div className="flex-1 min-h-page">{children}</div>
                     <Footer />
                 </div>
             </div>
