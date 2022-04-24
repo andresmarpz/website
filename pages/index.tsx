@@ -24,7 +24,7 @@ export function getStaticProps() {
 export default function Home({ projects }: props) {
     return (
         <main>
-            <h1 className="text-gray-900 text-5xl font-bold mt-20">
+            <h1 className="rounded-md  text-gray-900 text-5xl font-bold mt-20">
                 Hello! I'm Andrew.
             </h1>
             <p className="text-gray-700 text-lg mt-3">
