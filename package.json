@@ -18,6 +18,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@formspree/react": "^2.2.4",
         "autoprefixer": "^10.2.6",
         "axios": "^0.21.4",
         "fs": "^0.0.1-security",

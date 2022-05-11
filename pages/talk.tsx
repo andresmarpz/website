@@ -1,3 +1,5 @@
+import ContactForm from "@/components/ContactForm";
+
 export default function Talk() {
     return (
         <main className="mt-12">
@@ -10,17 +12,17 @@ export default function Talk() {
             <p className="text-lg text-gray-700">
                 You can leave me a message below, find me in{' '}
                 <a href="https://twitter.com/andresmarpz">
-                    <b>Twitter</b>
+                    <b className="underline">Twitter</b>
                 </a>{' '}
                 /{' '}
                 <a href="https://linkedin.com/in/andresmarpz">
-                    <b>LinkedIn</b>
+                    <b className="underline">LinkedIn</b>
                 </a>
                 , or email me at
                 <b> andresmarpz@gmail.com</b>
             </p>
 
-            <div className="mt-12">* not yet implemented form *</div>
+            <div className="mt-12"><ContactForm /></div>
         </main>
     );
 }

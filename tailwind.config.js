@@ -5,15 +5,23 @@ module.exports = {
     ],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {},
-        minWidth: {
-            320: '320px'
+        screens: {
+            xsm: '540px',
         },
-        gridTemplateRows: {
-            project: '0.1fr 1fr 0.2fr'
-        },
-        minHeight: {
-            page: '720px'
+        extend: {
+            maxWidth: {
+                160: '160px'
+            },
+            minHeight: {
+                page: '720px'
+            },
+            minWidth: {
+                80: '80px',
+                320: '320px'
+            },
+            gridTemplateRows: {
+                project: '0.1fr 1fr 0.2fr'
+            },
         }
     },
     variants: {
