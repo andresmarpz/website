@@ -1,30 +1,31 @@
-import React from 'react';
-
-import Image from 'next/image';
 import Button from '@/components/Button';
+import Image from 'next/image';
 
 const Project = (props: {
     title: string;
     description: string;
+    techStack: string;
     link?: string;
     github?: string;
+    image?: string;
     className?: string;
 }) => {
     return (
         <div
             className={
-                'p-4 text-gray-600 h-full overflow-hidden grid grid-rows-project border border-gray-200 rounded' +
+                'px-4 text-gray-600 h-full overflow-hidden border border-gray-200 rounded' +
                 (props.className === undefined ? '' : props.className)
             }>
-            <h2 className="text-lg font-semibold text-gray-800">
+            <h2 className="mt-4 text-lg font-semibold text-gray-800">
                 {props.title}
             </h2>
-
-            <p className="overflow-ellipsis">{props.description}</p>
+            <div className="w-full flex justify-center"></div>
+            <p>{props.description}</p>
+            <p>Stack: {props.techStack}</p>
             <div className="flex items-center mt-2">
                 {props.link !== undefined ? (
                     <a href={props.link} target="_blank" rel="noreferrer">
-                        <Button>Live</Button>
+                        <Button fill={true}>Visit</Button>
                     </a>
                 ) : (
                     ''
@@ -46,6 +47,24 @@ const Project = (props: {
                     ''
                 )}
             </div>
+            {props.image && (
+                <div
+                    style={{
+                        boxSizing: 'border-box',
+                        width: '70%',
+                        margin: '32px auto 0',
+                        aspectRatio: '4 / 3',
+                        overflow: 'hidden',
+                        position: 'relative'
+                    }}>
+                    <Image
+                        alt={`Preview of the site with url ${props.link}`}
+                        src={props.image}
+                        objectFit="cover"
+                        layout="fill"
+                    />
+                </div>
+            )}
         </div>
     );
 };

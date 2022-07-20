@@ -1,13 +1,13 @@
 import { getProjects, Project } from '@/helper/projects';
 
-import Image from 'next/image';
-import Link from 'next/link';
 import ProjectCard from '@/components/ProjectCard';
 import Social from '@/components/Social';
+import Image from 'next/image';
+import Link from 'next/link';
 
 import github from '@/public/svgs/github.svg';
-import twitter from '@/public/svgs/twitter.svg';
 import linkedin from '@/public/svgs/linkedin.svg';
+import twitter from '@/public/svgs/twitter.svg';
 
 interface props {
     projects: Project[];
@@ -30,7 +30,7 @@ export default function Home({ projects }: props) {
             <p className="text-gray-700 text-lg mt-3">
                 I'm a Frontend Developer from Uruguay. I enjoy designing and
                 developing UIs. The technologies I'm currently into are{' '}
-                <b>TypeScript</b> / <b>Nextjs</b> and <b>Tailwind CSS</b>.
+                <b>TypeScript</b> & <b>Next.js</b>.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 items-center">
                 <Image
@@ -85,9 +85,11 @@ export default function Home({ projects }: props) {
                         <ProjectCard
                             key={project.title}
                             title={project.title}
+                            techStack={project.techStack}
                             description={project.description}
                             link={project.link}
                             github={project.github}
+                            image={project.image}
                         />
                     ))}
                 </div>

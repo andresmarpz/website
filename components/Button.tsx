@@ -11,9 +11,9 @@ const Button = (
             <button
                 className={
                     (props.fill
-                        ? 'bg-gray-800 text-white '
+                        ? 'bg-black text-white '
                         : 'bg-white text-gray-700 ') +
-                    ' border rounded shadow-sm py-1 px-3'
+                    ' border rounded shadow-sm py-1 px-10'
                 }>
                 {props.children}
             </button>
