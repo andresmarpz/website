@@ -40,6 +40,7 @@ export default function Work({ projects }: props) {
                     <ProjectCard
                         title={project.title}
                         description={project.description}
+                        techStack={project.techStack}
                         github={project.github}
                         link={project.link}
                         key={'p' + index}
