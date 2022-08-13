@@ -13,16 +13,18 @@ const Project = (props: {
     return (
         <div
             className={
-                'px-4 text-gray-600 h-full overflow-hidden border border-gray-200 rounded' +
-                (props.className === undefined ? '' : props.className)
+                'text-gray-600 h-full overflow-hidden border border-gray-200 rounded' +
+                (props.className ?? '')
             }>
+			<div className='px-4'>
+
             <h2 className="mt-4 text-lg font-semibold text-gray-800">
                 {props.title}
             </h2>
             <div className="w-full flex justify-center"></div>
             <p>{props.description}</p>
             <p>Stack: {props.techStack}</p>
-            <div className="flex items-center mt-2">
+            <div className="flex items-center mt-2 py-4">
                 {props.link !== undefined ? (
                     <a href={props.link} target="_blank" rel="noreferrer">
                         <Button fill={true}>Visit</Button>
@@ -47,20 +49,21 @@ const Project = (props: {
                     ''
                 )}
             </div>
+			</div>
             {props.image && (
                 <div
                     style={{
                         boxSizing: 'border-box',
-                        width: '70%',
+                        width: '100%',
                         margin: '32px auto 0',
-                        aspectRatio: '4 / 3',
+                        aspectRatio: '21 / 13',
                         overflow: 'hidden',
                         position: 'relative'
                     }}>
                     <Image
                         alt={`Preview of the site with url ${props.link}`}
                         src={props.image}
-                        objectFit="contain"
+                        objectFit="cover"
                         layout="fill"
 						priority={true}
                     />

@@ -14,7 +14,7 @@ interface props {
 }
 
 export function getStaticProps() {
-    const projects = getProjects(3);
+    const projects = getProjects(4);
 
     return {
         props: { projects }
@@ -80,7 +80,7 @@ export default function Home({ projects }: props) {
                     </Link>
                     !
                 </p>
-                <div className="grid grid-cols-1 gap-4 mt-6 pb-10">
+                <div className="grid grid-cols-1 gap-8 mt-6 pb-10">
                     {projects.map((project) => (
                         <ProjectCard
                             key={project.title}
