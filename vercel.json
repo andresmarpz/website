@@ -13,13 +13,17 @@
     ],
     "redirects": [
         {
-            "source": "/bookmarks",
-            "destination": "https://bookmarks.andresmarpz.com"
+            "source": "/basement",
+            "destination": "https://basement.andresmarpz.com"
         },
-        {
-            "source": "/files",
-            "destination": "https://files.andresmarpz.com"
-        },
+		{
+			"source": "/rickandmorty",
+			"destination" :"https://rickandmorty.andresmarpz.com"
+		},
+		{
+			"source": "/ui",
+			"destination": "https://ui.andresmarpz.com"
+		},
         {
             "source": "/resume",
             "destination": "/andres-martinez-cv2021.pdf"
@@ -27,10 +31,6 @@
         {
             "source": "/cv",
             "destination": "/andres-martinez-cv2021.pdf"
-        },
-        {
-            "source": "/innovid",
-            "destination": "https://innovid.andresmarpz.com"
         }
     ]
 }
