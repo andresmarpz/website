@@ -60,8 +60,9 @@ const Project = (props: {
                     <Image
                         alt={`Preview of the site with url ${props.link}`}
                         src={props.image}
-                        objectFit="cover"
+                        objectFit="contain"
                         layout="fill"
+						priority={true}
                     />
                 </div>
             )}

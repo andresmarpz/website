@@ -1,7 +1,7 @@
 {
     "title": "Personal Webpage",
     "description": "Repository of this project. Feel free to look around.",
-    "techStack": "Next.js & TailwindCSS",
+    "techStack": "TypeScript, Next.js & TailwindCSS",
     "github": "https://github.com/andresmarpz/andresmarpz.com",
     "index": 0
 }
