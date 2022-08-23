@@ -13,43 +13,42 @@ const Project = (props: {
     return (
         <div
             className={
-                'text-gray-600 h-full overflow-hidden border border-gray-200 rounded' +
+                'shadow-sm text-gray-600 h-full overflow-hidden border border-gray-200 rounded' +
                 (props.className ?? '')
             }>
-			<div className='px-4'>
-
-            <h2 className="mt-4 text-lg font-semibold text-gray-800">
-                {props.title}
-            </h2>
-            <div className="w-full flex justify-center"></div>
-            <p>{props.description}</p>
-            <p>Stack: {props.techStack}</p>
-            <div className="flex items-center mt-2 py-4">
-                {props.link !== undefined ? (
-                    <a href={props.link} target="_blank" rel="noreferrer">
-                        <Button fill={true}>Visit</Button>
-                    </a>
-                ) : (
-                    ''
-                )}
-                {props.github !== undefined ? (
-                    <a
-                        className={props.link !== undefined ? 'ml-3' : ''}
-                        href={props.github}
-                        target="_blank"
-                        rel="noreferrer">
-                        <Image
-                            src={'/svgs/github.svg'}
-                            width={24}
-                            height={24}
-                            alt={'github logo'}
-                        />
-                    </a>
-                ) : (
-                    ''
-                )}
+            <div className="px-4">
+                <h2 className="mt-4 text-lg font-semibold text-gray-800">
+                    {props.title}
+                </h2>
+                <div className="w-full flex justify-center"></div>
+                <p>{props.description}</p>
+                <p>Stack: {props.techStack}</p>
+                <div className="flex items-center mt-2 py-4">
+                    {props.link !== undefined ? (
+                        <a href={props.link} target="_blank" rel="noreferrer">
+                            <Button fill={true}>Visit</Button>
+                        </a>
+                    ) : (
+                        ''
+                    )}
+                    {props.github !== undefined ? (
+                        <a
+                            className={props.link !== undefined ? 'ml-3' : ''}
+                            href={props.github}
+                            target="_blank"
+                            rel="noreferrer">
+                            <Image
+                                src={'/svgs/github.svg'}
+                                width={24}
+                                height={24}
+                                alt={'github logo'}
+                            />
+                        </a>
+                    ) : (
+                        ''
+                    )}
+                </div>
             </div>
-			</div>
             {props.image && (
                 <div
                     style={{
@@ -65,7 +64,7 @@ const Project = (props: {
                         src={props.image}
                         objectFit="cover"
                         layout="fill"
-						priority={true}
+                        priority={true}
                     />
                 </div>
             )}
