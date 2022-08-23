@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <main>
+        <main className='px-4'>
             <Navigation />
             <div className="flex flex-col max-w-3xl m-auto">
                 <div className="flex-1 min-h-page">{children}</div>
