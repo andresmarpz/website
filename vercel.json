@@ -13,24 +13,32 @@
     ],
     "redirects": [
         {
-            "source": "/bookmarks",
-            "destination": "https://bookmarks.andresmarpz.com"
-        },
-        {
-            "source": "/files",
-            "destination": "https://files.andresmarpz.com"
-        },
-        {
             "source": "/resume",
-            "destination": "/andres-martinez-cv2021.pdf"
+            "destination": "/andres-martinez-cv-2022.pdf"
         },
         {
             "source": "/cv",
-            "destination": "/andres-martinez-cv2021.pdf"
+            "destination": "/andres-martinez-cv-2022.pdf"
         },
-        {
-            "source": "/innovid",
-            "destination": "https://innovid.andresmarpz.com"
-        }
-    ]
+		{
+			"source": "/resume.pdf",
+			"destination": "/andres-martinez-cv-2022.pdf"
+		},
+		{
+			"source": "/cv.pdf",
+			"destination": "/andres-martinez-cv-2022.pdf"
+		},
+		{
+			"source": "/basement",
+			"destination": "https://basement.andresmarpz.com"
+		},
+		{
+			"source": "/rickandmorty",
+			"destination": "https://rickandmorty.andresmarpz.com"
+		},
+		{
+			"source": "/ui",
+			"destination": "https://ui.andresmarpz.com"
+		}
+	]
 }

@@ -31,7 +31,7 @@ export default function Work({ projects }: props) {
             </p>
             <br />
             <a
-                href="/andres-martinez-cv2021.pdf"
+                href="/andres-martinez-cv-2022.pdf"
                 className="border rounded bg-gray-100 px-8 py-2 font-medium text-gray-800">
                 Download my resume
             </a>
