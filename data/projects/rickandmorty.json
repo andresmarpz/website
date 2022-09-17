@@ -1,9 +1,0 @@
-{
-    "title": "Rick & Morty",
-    "description": "Explore the rickandmortyapi.com through the web.",
-    "techStack": "TypeScript, Next.js, Stitches & Radix",
-    "link": "https://rickandmorty.andresmarpz.com/",
-    "github": "https://github.com/andresmarpz/rickandmorty",
-    "image": "/images/projects/rickandmorty.png",
-    "index": 1
-}

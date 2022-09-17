@@ -1,9 +1,0 @@
-{
-    "title": "UI gallery",
-    "description": "Web interactions I have seen and replicated to learn.",
-    "techStack": "TypeScript, Next.js, Stitches & Radix",
-    "link": "https://ui.andresmarpz.com/",
-    "github": "https://github.com/andresmarpz/ui",
-    "image": "/images/projects/ui-link-preview.png",
-    "index": 2
-}
