@@ -1,7 +1,6 @@
 {
-    "name": "andresmarpz.com",
+    "name": "website",
     "description": "personal website",
-    "version": "0.0.1",
     "author": {
         "name": "Andres Martinez",
         "email": "andresmarpz@gmail.com",
@@ -20,20 +19,17 @@
     "dependencies": {
         "@radix-ui/colors": "^0.1.8",
         "@stitches/react": "^1.2.8",
-        "axios": "^0.27.2",
-        "next": "12.2.2",
-        "nodemailer": "^6.7.7",
-        "nprogress": "^0.2.0",
+        "next": "12.3.0",
         "react": "18.2.0",
         "react-dom": "18.2.0"
     },
     "devDependencies": {
-        "@types/nodemailer": "^6.4.4",
+        "@types/nodemailer": "^6.4.6",
         "@types/nprogress": "^0.2.0",
-        "@types/react": "18.0.15",
-        "eslint": "8.20.0",
-        "eslint-config-next": "12.2.2",
+        "@types/react": "18.0.20",
+        "eslint": "8.23.1",
+        "eslint-config-next": "12.3.0",
         "prettier": "^2.7.1",
-        "typescript": "4.7.4"
+        "typescript": "4.8.3"
     }
 }
