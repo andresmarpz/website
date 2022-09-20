@@ -1,39 +1,38 @@
-import Box from '@/components/global/Box';
+import CaseStudy from '@/components/CaseStudy';
+import Box from '@/components/common/Box';
 import RoughNotationGroup from '@/components/primitives/RoughNotationGroup';
 import RoughNotationText from '@/components/primitives/RoughNotationText';
 import { css, styled } from '@/stitches.config';
 import { amber, blue, green, red, violet } from '@radix-ui/colors';
 import { NextPage } from 'next';
+import Image from 'next/image';
 import React from 'react';
 
+import RickAndMorty from '../public/images/projects/rickandmorty.png'
+
 const TitleStyle = css({
-	marginTop: '5vh',
+	marginTop: '5rem',
 	marginBottom: 8,
 	color: '$slate12',
 	
 	lineHeight: 1.5,
-	fontSize: '17px',
-	fontWeight: 600
+	fontSize: '20px',
+	fontWeight: 700
 })
 
-// we should respect semantic headings
-const Title = styled('h1', TitleStyle);
-const Subtitle = styled('h2', TitleStyle)
-
-const Description = styled('p', {
+const Paragraph = styled('p', {
     margin: 0,
-    color: '$slate11',
+    color: '$slate12',
 
     lineHeight: 1.4,
     fontSize: '16px',
     fontWeight: 'normal'
 });
 
-
 const HireMe: React.FC = () => {
 	return <Box as='a' css={{
 		textDecoration: 'none',
-		color: '$slate11'
+		color: '$slate12'
 	}} href="mailto:andresmarpz@gmail.com">
 		<RoughNotationText config={{
 			type: 'circle',
@@ -50,8 +49,8 @@ const Home: NextPage = () => {
     return (
         <div>
 			<section>
-				<Title>Hey! I'm Andrew. I'm a guy passionate about the web.</Title>
-				<Description>
+				<Box as="h1" className={TitleStyle()}>Hey! I'm Andrew. I'm a guy passionate about the web.</Box>
+				<Paragraph css={{ paddingBottom: '3rem' }}>
 					<RoughNotationGroup>
 						The thing I love the most is the ability to create something
 						that can be used by   
@@ -99,10 +98,59 @@ const Home: NextPage = () => {
 						, where I can learn, grow and get to invest time in what I love.
 						<HireMe/>
 					</RoughNotationGroup>
-				</Description>
+				</Paragraph>
 			</section>
 
-			
+			<section style={{ marginBottom: '5rem' }}>
+				<Box as="h2" className={TitleStyle()}>Skills</Box>
+				<Paragraph>
+					Through my studies, I've learned a solid amount of computer science and 
+					web development concepts, and have dedicated a lot of my free time to
+					apply these in personal and academic projects.
+				</Paragraph>
+
+				<Box as="ul" css={{
+						color: '$slate12',
+						marginTop: '3rem',
+						listStyle: 'none',
+						display: 'grid',
+						gap: 10,
+						gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+				}}>
+					<li>HTML & CSS</li>
+					<li>JavaScript</li>
+					<li>TypeScript</li>
+					<li>React</li>
+					<li>Next.js</li>
+					<li>Git</li>
+					<li>PostgreSQL</li>
+					<li>MongoDB</li>
+				</Box>
+			</section>
+
+			<section style={{ display: 'flex', flexDirection: 'column' }}>
+				<Box as="h3" className={TitleStyle()}>Projects</Box>
+				<Paragraph css={{ marginBottom: '3rem' }}>
+					I like to try out new technologies and experiment with them, as a way to
+					continue practicing and learning. <br/>
+					These are case studies of the most relevant work I've done.
+				</Paragraph>
+
+				<CaseStudy 
+					src={RickAndMorty} 
+					href="/"
+					title="Rick and Morty"
+					description='A web app that allows you to search for characters, locations or episodes from the Rick and Morty TV show.' 
+				/>
+			</section>
+
+			<section>
+				<Box as="h4" className={TitleStyle()}>Contact</Box>
+				<Paragraph css={{ marginBottom: "5rem" }}>
+					Feel free to reach out to me if you have any questions or just want to
+					say hi!
+				</Paragraph>
+			</section>
         </div>
     );
 };

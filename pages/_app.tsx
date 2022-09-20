@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import { globalCss } from '@/stitches.config';
-import Layout from '@/components/global/Layout';
+import Layout from '@/components/common/Layout';
 
 const globalStyles = globalCss({
 	'*': {
