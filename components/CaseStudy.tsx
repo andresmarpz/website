@@ -37,6 +37,10 @@ const CaseStudy: React.FC<Props> = ({ src, href, title, description }) => {
         <Box as="article" css={{ 
 			display: 'flex',
 			flexDirection: 'column',
+
+			padding: 16,
+			border: '1px solid $slate4',
+			borderRadius: 8
 		}}>
             <Image
                 src={src}
@@ -46,7 +50,7 @@ const CaseStudy: React.FC<Props> = ({ src, href, title, description }) => {
 			
 			<StyledTitle>{title}</StyledTitle>
             <Box as="p" css={{ color: '$slate11', margin: 0 }}>{description}</Box>
-			<StyledAnchor href={href}>VIEW PROJECT {'>'}</StyledAnchor>
+			<StyledAnchor href={href}>READ CASE STUDY {'>'}</StyledAnchor>
         </Box>
     );
 };

@@ -5,13 +5,12 @@ import RoughNotationText from '@/components/primitives/RoughNotationText';
 import { css, styled } from '@/stitches.config';
 import { amber, blue, green, red, violet } from '@radix-ui/colors';
 import { NextPage } from 'next';
-import Image from 'next/image';
 import React from 'react';
 
 import RickAndMorty from '../public/images/projects/rickandmorty.png'
+import Basement from '../public/images/projects/basement.png'
 
 const TitleStyle = css({
-	marginTop: '5rem',
 	marginBottom: 8,
 	color: '$slate12',
 	
@@ -28,6 +27,18 @@ const Paragraph = styled('p', {
     fontSize: '16px',
     fontWeight: 'normal'
 });
+
+const Section = styled('section', {
+	marginTop: '6rem'
+})
+
+const Separator = styled('hr', {
+	margin: '3rem auto',
+	width: '65%',
+	height: 1,
+	border: 'none',
+	backgroundColor: '$slate5'
+})
 
 const HireMe: React.FC = () => {
 	return <Box as='a' css={{
@@ -48,9 +59,9 @@ const HireMe: React.FC = () => {
 const Home: NextPage = () => {
     return (
         <div>
-			<section>
+			<Section>
 				<Box as="h1" className={TitleStyle()}>Hey! I'm Andrew. I'm a guy passionate about the web.</Box>
-				<Paragraph css={{ paddingBottom: '3rem' }}>
+				<Paragraph>
 					<RoughNotationGroup>
 						The thing I love the most is the ability to create something
 						that can be used by   
@@ -99,9 +110,9 @@ const Home: NextPage = () => {
 						<HireMe/>
 					</RoughNotationGroup>
 				</Paragraph>
-			</section>
+			</Section>
 
-			<section style={{ marginBottom: '5rem' }}>
+			<Section>
 				<Box as="h2" className={TitleStyle()}>Skills</Box>
 				<Paragraph>
 					Through my studies, I've learned a solid amount of computer science and 
@@ -111,7 +122,6 @@ const Home: NextPage = () => {
 
 				<Box as="ul" css={{
 						color: '$slate12',
-						marginTop: '3rem',
 						listStyle: 'none',
 						display: 'grid',
 						gap: 10,
@@ -125,10 +135,11 @@ const Home: NextPage = () => {
 					<li>Git</li>
 					<li>PostgreSQL</li>
 					<li>MongoDB</li>
+					<li>Prisma</li>
 				</Box>
-			</section>
+			</Section>
 
-			<section style={{ display: 'flex', flexDirection: 'column' }}>
+			<Section>
 				<Box as="h3" className={TitleStyle()}>Projects</Box>
 				<Paragraph css={{ marginBottom: '3rem' }}>
 					I like to try out new technologies and experiment with them, as a way to
@@ -136,21 +147,36 @@ const Home: NextPage = () => {
 					These are case studies of the most relevant work I've done.
 				</Paragraph>
 
-				<CaseStudy 
-					src={RickAndMorty} 
-					href="/"
-					title="Rick and Morty"
-					description='A web app that allows you to search for characters, locations or episodes from the Rick and Morty TV show.' 
-				/>
-			</section>
+				<Box css={{
+					display: 'flex',
+					flexDirection: 'column',
+					gap: 48
+				}}>
+					<CaseStudy 
+						src={RickAndMorty} 
+						href="/"
+						title="Rick and Morty"
+						description='A web app that allows you to search for characters, locations or episodes from the Rick and Morty TV show.' 
+					/>
+					<CaseStudy 
+						src={Basement} 
+						href="/"
+						title="Basement Challenge"
+						description='Responsive e-commerce website implemented from a Figma design file.' 
+					/>
+				</Box>
+				<Paragraph css={{ marginTop: '2rem' }}>
+					Aside from these projects, I'm always experimenting with cool UI ideas 
+				</Paragraph>
+			</Section>
 
-			<section>
+			<Section>
 				<Box as="h4" className={TitleStyle()}>Contact</Box>
 				<Paragraph css={{ marginBottom: "5rem" }}>
 					Feel free to reach out to me if you have any questions or just want to
 					say hi!
 				</Paragraph>
-			</section>
+			</Section>
         </div>
     );
 };
