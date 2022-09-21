@@ -4,11 +4,13 @@ import RoughNotationGroup from '@/components/primitives/RoughNotationGroup';
 import RoughNotationText from '@/components/primitives/RoughNotationText';
 import { css, styled } from '@/stitches.config';
 import { amber, blue, green, red, violet } from '@radix-ui/colors';
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import React from 'react';
 
 import RickAndMorty from '../public/images/projects/rickandmorty.png'
 import Basement from '../public/images/projects/basement.png'
+import LinkPreview from '@/components/ui/LinkPreview';
+import { getLinkPreviews, ImageData } from '@/lib/scanner';
 
 const TitleStyle = css({
 	marginBottom: 8,
@@ -56,7 +58,25 @@ const HireMe: React.FC = () => {
 	</Box>
 }
 
-const Home: NextPage = () => {
+export const getStaticProps: GetStaticProps = () => {
+	const previews = getLinkPreviews();
+
+	return {
+		props: {
+			previews
+		}
+	}
+}
+
+interface Props{
+	previews: ImageData[]
+}
+
+const Home: NextPage<Props> = ({ previews }) => {
+	const getData = (href: string) => {
+        return previews.find((image) => image.href === href);
+    };
+
     return (
         <div>
 			<Section>
@@ -142,8 +162,13 @@ const Home: NextPage = () => {
 			<Section>
 				<Box as="h3" className={TitleStyle()}>Projects</Box>
 				<Paragraph css={{ marginBottom: '3rem' }}>
-					I like to try out new technologies and experiment with them, as a way to
-					continue practicing and learning. <br/>
+					I like to always have a project in mind to keep learning and challenging myself,
+					learning new technologies and improving my design skills. For instance, I'm currently
+					tinkering with hovereable links, such as this {' '}
+					<LinkPreview 
+						href='https://nextjs.org'
+						imageData={getData('https://nextjs.org')}
+					>Next.js</LinkPreview> one.<br/>
 					These are case studies of the most relevant work I've done.
 				</Paragraph>
 
@@ -165,9 +190,6 @@ const Home: NextPage = () => {
 						description='Responsive e-commerce website implemented from a Figma design file.' 
 					/>
 				</Box>
-				<Paragraph css={{ marginTop: '2rem' }}>
-					Aside from these projects, I'm always experimenting with cool UI ideas 
-				</Paragraph>
 			</Section>
 
 			<Section>

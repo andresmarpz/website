@@ -1,0 +1,20 @@
+[
+    {
+        "href": "https://nextjs.org",
+        "favicon": "/assets/previews/https:@@nextjs.org-favicon.ico",
+        "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/ABkZGRAPEBYXFwAJFAD///+blpOMjIz7+/sA7/L1V3qd0tTW+vn5D7AT3gPAuCEAAAAASUVORK5CYII=",
+        "src": "/assets/previews/https:@@nextjs.org.png",
+        "width": 960,
+        "height": 600,
+        "type": "png"
+    },
+    {
+        "href": "https://apple.com",
+        "favicon": "/assets/previews/https:@@apple.com-favicon.ico",
+        "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGNgYGDg5OPg5ONgYGBg4OPh/f/6//9n//l4+RhYmFku7r739spvTk4uAKDOC6kPLxAiAAAAAElFTkSuQmCC",
+        "src": "/assets/previews/https:@@apple.com.png",
+        "width": 960,
+        "height": 600,
+        "type": "png"
+    }
+]
