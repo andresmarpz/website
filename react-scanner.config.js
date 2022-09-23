@@ -14,7 +14,8 @@ module.exports = {
 
 				entries.forEach((entry) => {
 					const url = entry['props']['href'];
-					result.links.push(url);
+					if(!result.links.includes(url))
+						result.links.push(url);
 				});
 	
 				output(result, 'mocks/paths.json');

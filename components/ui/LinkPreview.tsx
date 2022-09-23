@@ -85,31 +85,35 @@ interface Props {
     showcase?: true | undefined;
     imageData: ImageData | undefined;
     children?: React.ReactNode;
+	favicon?: boolean;
 }
 
 const LinkPreview = ({
     imageData,
     showcase,
-    children
+    children,
+	favicon = false
 }: Props & React.HTMLProps<HTMLAnchorElement>) => {
     const [didBlur, setDidBlur] = useState(false);
 
     if (!imageData) return <></>;
-    const { base64, src, href, favicon } = imageData;
+    const { base64, src, href, favicon: faviconUrl } = imageData;
 
     return (
         <Root openDelay={60} closeDelay={60}>
             <Trigger asChild>
                 <StyledLink href={href} target="_blank" rel="noreferrer">
-                    <Image
-                        src={favicon}
-                        width={16}
-                        height={16}
-                        objectFit="contain"
-                        priority={true}
-                        quality={100}
-                        alt={`${href} favicon`}
-                    />
+					{favicon && 
+						<Image
+							src={faviconUrl}
+							width={16}
+							height={16}
+							objectFit="contain"
+							priority={true}
+							quality={100}
+							alt={`${href} favicon`}
+						/>
+					}
                     {children}
                 </StyledLink>
             </Trigger>

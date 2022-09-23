@@ -11,6 +11,7 @@ import RickAndMorty from '../public/images/projects/rickandmorty.png'
 import Basement from '../public/images/projects/basement.png'
 import LinkPreview from '@/components/ui/LinkPreview';
 import { getLinkPreviews, ImageData } from '@/lib/scanner';
+import Paragraph from '@/components/common/Paragraph';
 
 const TitleStyle = css({
 	marginBottom: 8,
@@ -20,15 +21,6 @@ const TitleStyle = css({
 	fontSize: '20px',
 	fontWeight: 700
 })
-
-const Paragraph = styled('p', {
-    margin: 0,
-    color: '$slate12',
-
-    lineHeight: 1.4,
-    fontSize: '16px',
-    fontWeight: 'normal'
-});
 
 const Section = styled('section', {
 	marginTop: '6rem'
@@ -80,7 +72,7 @@ const Home: NextPage<Props> = ({ previews }) => {
     return (
         <div>
 			<Section>
-				<Box as="h1" className={TitleStyle()}>Hey! I'm Andrew. I'm a guy passionate about the web.</Box>
+				<Box as="h1" className={TitleStyle()}>Hey! I&apos;m Andrew. I&apos;m a guy passionate about the web.</Box>
 				<Paragraph>
 					<RoughNotationGroup>
 						The thing I love the most is the ability to create something
@@ -95,10 +87,10 @@ const Home: NextPage<Props> = ({ previews }) => {
 						</RoughNotationText>. How cool is that? <br />
 						Have you ever come across a sleek design, a delightful
 						interaction or a magical detail that made you feel
-						something? It's wonderful.
+						something? It&apos;s wonderful.
 						<br /><br />
 
-						Currently, I'm a 20-year-old student of
+						Currently, I&apos;m a 20-year-old student of
 						<RoughNotationText
 							config={{
 								type: 'highlight',
@@ -118,7 +110,7 @@ const Home: NextPage<Props> = ({ previews }) => {
 						and learn to work as a team to deliver bi-weekly tasks.
 						<br /><br />
 
-						As of now, I'm looking for a job as a
+						As of now, I&apos;m looking for a job as a
 						<RoughNotationText
 							config={{
 								type: 'highlight',
@@ -135,7 +127,7 @@ const Home: NextPage<Props> = ({ previews }) => {
 			<Section>
 				<Box as="h2" className={TitleStyle()}>Skills</Box>
 				<Paragraph>
-					Through my studies, I've learned a solid amount of computer science and 
+					Through my studies, I&apos;ve learned a solid amount of computer science and 
 					web development concepts, and have dedicated a lot of my free time to
 					apply these in personal and academic projects.
 				</Paragraph>
@@ -163,13 +155,13 @@ const Home: NextPage<Props> = ({ previews }) => {
 				<Box as="h3" className={TitleStyle()}>Projects</Box>
 				<Paragraph css={{ marginBottom: '3rem' }}>
 					I like to always have a project in mind to keep learning and challenging myself,
-					learning new technologies and improving my design skills. For instance, I'm currently
+					learning new technologies and improving my design skills. For instance, I&apos;m currently
 					tinkering with hovereable links, such as this {' '}
 					<LinkPreview 
 						href='https://nextjs.org'
 						imageData={getData('https://nextjs.org')}
-					>Next.js</LinkPreview> one.<br/>
-					These are case studies of the most relevant work I've done.
+					>Next.js</LinkPreview> one.<br/><br/>
+					These are case studies of the most relevant work I&apos;ve done.
 				</Paragraph>
 
 				<Box css={{
@@ -179,7 +171,7 @@ const Home: NextPage<Props> = ({ previews }) => {
 				}}>
 					<CaseStudy 
 						src={RickAndMorty} 
-						href="/"
+						href="/project/rickandmorty"
 						title="Rick and Morty"
 						description='A web app that allows you to search for characters, locations or episodes from the Rick and Morty TV show.' 
 					/>

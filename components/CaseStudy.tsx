@@ -1,5 +1,6 @@
 import { styled } from '@/stitches.config';
 import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import Box from './common/Box';
 
@@ -45,12 +46,15 @@ const CaseStudy: React.FC<Props> = ({ src, href, title, description }) => {
             <Image
                 src={src}
                 alt={`${href} website preview on iPhone and Safari`}
+				placeholder="blur"
                 quality={100}
             />
 			
 			<StyledTitle>{title}</StyledTitle>
             <Box as="p" css={{ color: '$slate11', margin: 0 }}>{description}</Box>
-			<StyledAnchor href={href}>READ CASE STUDY {'>'}</StyledAnchor>
+			<Link href={href} passHref>
+				<StyledAnchor>READ CASE STUDY {'>'}</StyledAnchor>
+			</Link>
         </Box>
     );
 };

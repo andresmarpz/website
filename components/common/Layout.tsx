@@ -1,5 +1,6 @@
 import { styled } from '@/stitches.config';
 import React from 'react';
+import Footer from './Footer';
 import Header from './Header';
 
 const StyledLayout = styled('div', {
@@ -13,6 +14,7 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
         <StyledLayout>
             <Header />
             {children}
+			<Footer/>
         </StyledLayout>
     );
 };

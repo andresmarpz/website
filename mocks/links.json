@@ -9,10 +9,10 @@
         "type": "png"
     },
     {
-        "href": "https://apple.com",
-        "favicon": "/assets/previews/https:@@apple.com-favicon.ico",
-        "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGNgYGDg5OPg5ONgYGBg4OPh/f/6//9n//l4+RhYmFku7r739spvTk4uAKDOC6kPLxAiAAAAAElFTkSuQmCC",
-        "src": "/assets/previews/https:@@apple.com.png",
+        "href": "https://rickandmortyapi.com",
+        "favicon": "/assets/previews/https:@@rickandmortyapi.com-favicon.png?v=1538abef51e33ef514e8fe1ab9aeab4e",
+        "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALElEQVR4nGP4Dwa///z5//8fQ3tnb2VdU1l5bUtrF4O2jmZeVa6cii4DIx8ADF4UUM5hjCsAAAAASUVORK5CYII=",
+        "src": "/assets/previews/https:@@rickandmortyapi.com.png",
         "width": 960,
         "height": 600,
         "type": "png"
