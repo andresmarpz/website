@@ -1,7 +1,9 @@
+import useStore from '@/lib/store';
 import {
     createContext,
     PropsWithChildren,
     useEffect,
+    useRef,
     useState
 } from 'react';
 import { RoughAnnotation } from 'rough-notation/lib/model';
@@ -15,26 +17,40 @@ export const NotationContext = createContext<Context>({
 
 // @refresh reset
 const RoughNotationGroup: React.FC<PropsWithChildren> = ({ children }) => {
+	const setAlreadyAnimated = useStore(state => state.setAlreadyAnimated);
+	// we want to keep this as a const, not a state, so that it doesn't trigger a re-render
+	// it's only useful to know if we should animate the annotations on mount or not (page transitions)
+	const alreadyAnimated = useRef(useStore.getState().alreadyAnimated);
     const [state] = useState<RoughAnnotation[]>([]);
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        if (!mounted) setMounted(true);
+		if (!mounted) setMounted(true);
 
-        if (mounted) {
-            let timeout = 0;
-            state.forEach((annotation) => {
-                setTimeout(() => {
-                    annotation.show();
-                }, timeout);
-                timeout += annotation.animationDuration ?? 800;
-            });
+		let timer: NodeJS.Timeout | undefined = undefined;
+        if (mounted && state) {
+			let timeout = 0;
+			state.forEach(annotation => {
+				timeout += annotation.animationDuration ?? 800;
+				
+				// show animation if it's the first time we're rendering the page
+				// if coming back from another page, don't animate and show the annotations immediately
+				if(alreadyAnimated.current)
+					annotation.animate = false;
+				
+				alreadyAnimated.current ? annotation.show() : setTimeout(() => annotation.show(), timeout);
+			})
+
+			if(!alreadyAnimated.current)
+				timer = setTimeout(() => {
+					setAlreadyAnimated(true);
+				}, timeout)
         }
 
 		return () => {
-			state.forEach(annotation => annotation.remove())
+			clearTimeout(timer);
 		}
-    }, [mounted, state]);
+    }, [mounted, state, setAlreadyAnimated]);
 
     return (
         <NotationContext.Provider value={{ annotations: state }}>
