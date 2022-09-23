@@ -10,7 +10,7 @@ interface Props{
 	github: string
 }
 
-const CaseStudyLayout: React.FC<Props> = ({ title, description, type, stack, href }) => {
+const CaseStudyLayout: React.FC<Props> = ({ title, description, type, stack, href, github }) => {
 	return <div>
 		<h1>{title}</h1>
 		<Paragraph>
@@ -42,7 +42,7 @@ const CaseStudyLayout: React.FC<Props> = ({ title, description, type, stack, hre
 					gap: 8
 				}}>
 					<Box as="a" css={{ color: "$slate12" }} href={href} target="_blank" rel="noreferrer">Visit Live</Box>
-					<Box as="a" css={{ color: "$slate12" }} href={href} target="_blank" rel="noreferrer">GitHub</Box>
+					<Box as="a" css={{ color: "$slate12" }} href={github} target="_blank" rel="noreferrer">GitHub</Box>
 				</Box>
 			</Box>
 		</Box>
