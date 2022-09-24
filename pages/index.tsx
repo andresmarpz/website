@@ -177,7 +177,7 @@ const Home: NextPage<Props> = ({ previews }) => {
 					/>
 					<CaseStudy 
 						src={Basement} 
-						href="/"
+						href="/project/basement"
 						title="Basement Challenge"
 						description='Responsive e-commerce website implemented from a Figma design file.' 
 					/>
