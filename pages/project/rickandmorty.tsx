@@ -4,14 +4,13 @@ import { getLinkPreviews, ImageData } from "@/lib/scanner";
 import { GetStaticProps, NextPage } from "next";
 import Image from "next/future/image";
 
-import RYMH from '@/public/images/projects/rickandmorty-hero.png'
-import RYM1 from '@/public/images/projects/rickandmorty-1.png'
-import RYM2 from '@/public/images/projects/rickandmorty-2.png'
-import RYM3 from '@/public/images/projects/rickandmorty-3.png'
+import RickAndMortyHero from '@/public/images/projects/rickandmorty-hero.png'
+import RickAndMortyPages from '@/public/images/projects/rickandmorty-pages.png'
 
 import { styled } from "@/stitches.config";
 import Box from "@/components/common/Box";
 import Paragraph from "@/components/common/Paragraph";
+import Code from "@/components/common/Code";
 
 const StyledHero = styled(Image, {
 	marginTop: '5rem',
@@ -22,17 +21,11 @@ const StyledHero = styled(Image, {
 })
 
 const StyledImage = styled(Image, {
+	marginTop: '4rem',
 	boxShadow: 'rgba(0, 0, 0, 0.12) 0px 8px 30px 0px',
 	borderRadius: 8,
 	maxWidth: '100%',
 	height: 'auto'
-})
-
-const StyledCode = styled('code', {
-	backgroundColor: "$slate3",
-	borderRadius: 4,
-	verticalAlign: 'baseline',
-	padding: '0.15rem 0.4rem',
 })
 
 export const getStaticProps: GetStaticProps = () => {
@@ -75,7 +68,7 @@ const RickAndMorty: NextPage<{ previews: ImageData[] }> = ({ previews }) => {
 			github="https://github.com/andresmarpz/rickandmorty"
 		/>
 
-		<StyledHero src={RYMH} alt='' />
+		<StyledHero src={RickAndMortyHero} alt='' />
 
 		<Box as="h2" css={{ marginTop: '7rem' }}>
 			Purpose & goal
@@ -100,24 +93,11 @@ const RickAndMorty: NextPage<{ previews: ImageData[] }> = ({ previews }) => {
 
 			The complex part of this project was the data fetching, as I wanted to have a good user experience
 			with pagination on the gallery, and also fast navigation between dedicated pages. <br/>
-			To achieve this, I used the <StyledCode>getStaticProps</StyledCode> method from Next.js, paired with <StyledCode>useSWR</StyledCode> to 
+			To achieve this, I used the <Code>getStaticProps</Code> method from Next.js, paired with <Code>useSWR</Code> to 
 			keep the data fetched cached and avoid unnecessary requests. <br/>
 		</Paragraph>
 
-		<Box css={{
-			marginTop: '5rem',
-			padding: 24,
-			display: 'grid',
-			gridTemplateColumns: '1fr 1fr',
-			gridTemplateRows: '1fr 1fr',
-			alignItems: 'center',
-			justifyItems: 'center',
-			gap: 48
-		}}>
-			<StyledImage src={RYM1} alt='' />
-			<StyledImage css={{ gridRow: '1/3' }} src={RYM2} alt='' />
-			<StyledImage src={RYM3} alt='' />
-		</Box>
+		<StyledImage src={RickAndMortyPages} alt='' />
 
 		<Box as="h3" css={{ marginTop: '5rem' }}>
 			What I learned
@@ -129,7 +109,7 @@ const RickAndMorty: NextPage<{ previews: ImageData[] }> = ({ previews }) => {
 			the solution, but I ended up preventing the unmount, and everything else worked just fine.
 
 			<br/><br/>
-			Overall, I learned a lot about Next.js, <StyledCode>next/image</StyledCode>, data fetching and accessibility.<br/>
+			Overall, I learned a lot about Next.js, <Code>next/image</Code>, data fetching and accessibility.<br/>
 		</Paragraph>
 	</div>;
 }
