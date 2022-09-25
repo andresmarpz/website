@@ -185,11 +185,7 @@ const Home: NextPage<Props> = ({ previews }) => {
 			</Section>
 
 			<Section>
-				<Box as="h4" className={TitleStyle()}>Contact</Box>
-				<Paragraph css={{ marginBottom: "5rem" }}>
-					Feel free to reach out to me if you have any questions or just want to
-					say hi!
-				</Paragraph>
+				<Box as="h4" className={TitleStyle()} css={{ textAlign: 'center' }}>Contact</Box>
 			</Section>
         </div>
     );

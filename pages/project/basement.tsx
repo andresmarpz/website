@@ -30,12 +30,22 @@ const StyledImage = styled(Image, {
 	borderRadius: 8
 })
 
+const StyledLink = styled('a', {
+	color: '$slate12',
+	fontWeight: 500,
+	textDecoration: 'none',
+	
+	'&:hover': {
+		textDecoration: 'underline'
+	}
+})
+
 const Basement: NextPage = () => {
 	return <main>
 		<CaseStudyLayout 
 			title="Basement Challenge"
 			description={<>
-				The <a href="https://basement.studio">basement.studio</a> front-end challenge. You can 
+				The <StyledLink href="https://basement.studio" target="_blank" rel="noreferrer">basement.studio</StyledLink> front-end challenge. You can 
 				check out the GitHub page for the detailed description, but here is a summary: <br/><br/>
 
 				<StyledDescription>

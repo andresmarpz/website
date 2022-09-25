@@ -1,3 +1,4 @@
+import { styled } from "@/stitches.config"
 import Box from "./common/Box"
 import Paragraph from "./common/Paragraph"
 
@@ -10,6 +11,16 @@ interface Props{
 	github: string
 }
 
+const StyledLink = styled('a', {
+	color: '$slate12',
+	fontWeight: 500,
+	textDecoration: 'none',
+	
+	'&:hover': {
+		textDecoration: 'underline'
+	}
+})
+
 const CaseStudyLayout: React.FC<Props> = ({ title, description, type, stack, href, github }) => {
 	return <div>
 		<h1>{title}</h1>
@@ -17,19 +28,22 @@ const CaseStudyLayout: React.FC<Props> = ({ title, description, type, stack, hre
 			{description}
 		</Paragraph>
 		<Box css={{
+			marginTop: '1rem',
 			display: 'grid',
 			gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+			gap: 12
 		}}>
 			<Box>
 				<Box as="h3">Type</Box>
-				<Box as="p">{type}</Box>
+				<Box css={{ paddingTop: 8 }}>{type}</Box>
 			</Box>
 			<Box>
 				<Box as="h3">Stack</Box>
 				<Box css={{
 					display: 'flex',
 					flexDirection: 'column',
-					gap: 8
+					gap: 8,
+					paddingTop: 8
 				}}>
 					{stack.map((item, index) => <Box as="div" key={index}>{item}</Box>)}
 				</Box>
@@ -39,10 +53,11 @@ const CaseStudyLayout: React.FC<Props> = ({ title, description, type, stack, hre
 				<Box css={{
 					display: 'flex',
 					flexDirection: 'column',
-					gap: 8
+					gap: 8,
+					paddingTop: 8
 				}}>
-					<Box as="a" css={{ color: "$slate12" }} href={href} target="_blank" rel="noreferrer">Visit Live</Box>
-					<Box as="a" css={{ color: "$slate12" }} href={github} target="_blank" rel="noreferrer">GitHub</Box>
+					<StyledLink href={href} target="_blank" rel="noreferrer">Visit Live</StyledLink>
+					<StyledLink href={github} target="_blank" rel="noreferrer">GitHub</StyledLink>
 				</Box>
 			</Box>
 		</Box>
