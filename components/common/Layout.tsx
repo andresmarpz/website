@@ -9,11 +9,17 @@ const StyledLayout = styled('div', {
     paddingX: '16px'
 });
 
+const StyledMain = styled('main', {
+	minHeight: 'calc(var(--vh, 1vh) * 100 - 192px)',
+})
+
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
     return (
         <StyledLayout>
             <Header />
-            {children}
+			<StyledMain>
+            	{children}
+			</StyledMain>
 			<Footer/>
         </StyledLayout>
     );
