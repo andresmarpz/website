@@ -15,7 +15,8 @@ const config = createStitches({
 		}
 	},
 	media: {
-		bp1: '(min-width: 480px)'
+		bp1: '(min-width: 480px)',
+		xsm: '(min-width: 550px)',
 	},
 	utils: {
 		paddingX: (value: number | string) => ({
