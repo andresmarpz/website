@@ -37,15 +37,15 @@ const Separator = styled('hr', {
 const HireMe: React.FC = () => {
 	return <Box as='a' css={{
 		textDecoration: 'none',
-		color: '$slate12'
+		color: '$slate12',
+		fontWeight: 500
 	}} href="mailto:andresmarpz@gmail.com">
 		<RoughNotationText config={{
 			type: 'circle',
 			color: blue.blue5,
 			animationDuration: 1500,
 			multiline: false
-		}}>
-			Hire me?
+		}}>Hire me?
 		</RoughNotationText>
 	</Box>
 }
@@ -118,7 +118,7 @@ const Home: NextPage<Props> = ({ previews }) => {
 							}}>
 							Frontend Developer
 						</RoughNotationText>
-						, where I can learn, grow and get to invest time in what I love.
+						, where I can learn, grow and get to invest time in what I love.{' '}
 						<HireMe/>
 					</RoughNotationGroup>
 				</Paragraph>
