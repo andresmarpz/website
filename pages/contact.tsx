@@ -158,7 +158,7 @@ const CheckboxRoot = StyledCheckbox;
 const CheckboxIndicator = StyledIndicator;
 
 function useForceUpdate(){
-    const [value, setValue] = useState(0);
+    const { 1: setValue } = useState(0);
     return () => setValue(value => value + 1);
 }
 

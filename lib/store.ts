@@ -5,7 +5,7 @@ interface Store{
 	setAlreadyAnimated: (alreadyAnimated: boolean) => void;
 }
 
-const useStore = create<Store>((set, get) => ({
+const useStore = create<Store>((set) => ({
 	alreadyAnimated: false,
 	setAlreadyAnimated: (alreadyAnimated: boolean) => set({ alreadyAnimated }),
 }));

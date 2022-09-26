@@ -27,9 +27,7 @@ const Header: React.FC = () => {
 	return <StyledNav>
 		<Link href='/' passHref><StyledBack>A</StyledBack></Link>
 		<Box css={{ display: 'flex', gap: 12 }}>
-			<Link href='/about' passHref><StyledLink>About</StyledLink></Link>
-			<Link href='/projects' passHref><StyledLink>Projects</StyledLink></Link>
-			<Link href='/blog' passHref><StyledLink>Blog</StyledLink></Link>
+			<Link href='/' passHref><StyledLink>Home</StyledLink></Link>
 			<Link href='/contact' passHref><StyledLink>Contact</StyledLink></Link>
 		</Box>
 	</StyledNav>

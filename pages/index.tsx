@@ -26,14 +26,6 @@ const Section = styled('section', {
 	marginTop: '6rem'
 })
 
-const Separator = styled('hr', {
-	margin: '3rem auto',
-	width: '65%',
-	height: 1,
-	border: 'none',
-	backgroundColor: '$slate5'
-})
-
 const HireMe: React.FC = () => {
 	return <Box as='a' css={{
 		textDecoration: 'none',
@@ -71,7 +63,7 @@ const Home: NextPage<Props> = ({ previews }) => {
 
     return (
         <div>
-			<Section>
+			<Section id="about">
 				<Box as="h1" className={TitleStyle()}>Hey! I&apos;m Andrew. I&apos;m a guy passionate about the web.</Box>
 				<Paragraph>
 					<RoughNotationGroup>
@@ -90,7 +82,7 @@ const Home: NextPage<Props> = ({ previews }) => {
 						something? It&apos;s wonderful.
 						<br /><br />
 
-						Currently, I&apos;m a 20-year-old student of
+						I&apos;m a 20-year-old student from Uruguay, currently enrolled in
 						<RoughNotationText
 							config={{
 								type: 'highlight',
@@ -151,7 +143,7 @@ const Home: NextPage<Props> = ({ previews }) => {
 				</Box>
 			</Section>
 
-			<Section>
+			<Section id="projects">
 				<Box as="h3" className={TitleStyle()}>Projects</Box>
 				<Paragraph css={{ marginBottom: '3rem' }}>
 					I like to always have a project in mind to keep learning and challenging myself,
