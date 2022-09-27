@@ -14,8 +14,7 @@
         "dev": "next",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
-        "prebuild": "ts-node -O '{\"module\": \"commonjs\"}' lib/prebuild.ts"
+        "lint": "next lint"
     },
     "dependencies": {
         "@radix-ui/colors": "^0.1.8",
@@ -24,6 +23,7 @@
         "@stitches/react": "^1.2.8",
         "next": "12.3.1",
         "next-real-viewport": "^0.7.2",
+        "next-seo": "^5.5.0",
         "nodemailer": "^6.7.8",
         "react": "18.2.0",
         "react-dom": "18.2.0",
