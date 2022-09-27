@@ -4,13 +4,11 @@ import RoughNotationGroup from '@/ui/primitives/RoughNotationGroup';
 import RoughNotationText from '@/ui/primitives/RoughNotationText';
 import { styled } from '@/stitches.config';
 import { amber, blue, green, red, violet } from '@radix-ui/colors';
-import { GetStaticProps, NextPage } from 'next';
+import { NextPage } from 'next';
 import React from 'react';
 
 import RickAndMorty from '../public/images/projects/rickandmorty.png';
 import Basement from '../public/images/projects/basement.png';
-import LinkPreview from '@/ui/LinkPreview';
-import { getLinkPreviews, ImageData } from '@/lib/scanner';
 import Paragraph from '@/ui/Paragraph';
 import TitleStyle from '@/ui/TitleStyle';
 import NextLink from 'next/link';
@@ -44,25 +42,7 @@ const HireMe: React.FC = () => {
   );
 };
 
-export const getStaticProps: GetStaticProps = () => {
-  const previews = getLinkPreviews();
-
-  return {
-    props: {
-      previews
-    }
-  };
-};
-
-interface Props {
-  previews: ImageData[];
-}
-
-const Home: NextPage<Props> = ({ previews }) => {
-  const getData = (href: string) => {
-    return previews.find((image) => image.href === href);
-  };
-
+const Home: NextPage = () => {
   return (
     <div>
       <Section id="about">
@@ -157,14 +137,7 @@ const Home: NextPage<Props> = ({ previews }) => {
         <Paragraph css={{ marginBottom: '3rem' }}>
           I like to always have a project in mind to keep learning and
           challenging myself, learning new technologies and improving my design
-          skills. For instance, I&apos;m currently tinkering with hovereable
-          links, such as this{' '}
-          <LinkPreview
-            href="https://nextjs.org"
-            imageData={getData('https://nextjs.org')}>
-            Next.js
-          </LinkPreview>{' '}
-          one.
+          skills.
           <br />
           <br />
           These are case studies of the most relevant work I&apos;ve done.
