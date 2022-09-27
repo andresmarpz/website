@@ -1,4 +1,4 @@
-import Box from '@/components/common/Box';
+import Box from '@/ui/Box';
 import { keyframes, styled } from '@/stitches.config';
 import Image from 'next/image';
 import { useState } from 'react';

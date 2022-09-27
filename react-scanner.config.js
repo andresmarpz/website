@@ -1,7 +1,7 @@
 module.exports = {
     crawlFrom: './pages',
     includeSubComponents: true,
-    importedFrom: '@/components/ui/LinkPreview',
+    importedFrom: '@/ui/LinkPreview',
     processors: [
         'raw-report',
         ({ report, output }) => new Promise((resolve, reject) => {

@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import { globalCss } from '@/stitches.config';
-import Layout from '@/components/common/Layout';
+import Layout from '@/ui/Layout';
 import { useScrollRestoration } from '@/lib/useScrollRestoration';
 import { RealViewportProvider } from 'next-real-viewport';
 

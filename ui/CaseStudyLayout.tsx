@@ -1,6 +1,6 @@
 import { styled } from "@/stitches.config"
-import Box from "./common/Box"
-import Paragraph from "./common/Paragraph"
+import Box from "@/ui/Box"
+import Paragraph from "@/ui/Paragraph"
 
 interface Props{
 	title: string,

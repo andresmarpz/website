@@ -2,7 +2,7 @@ import { styled } from '@/stitches.config';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import Box from './common/Box';
+import Box from '@/ui/Box';
 
 interface Props {
     src: string | StaticImageData;

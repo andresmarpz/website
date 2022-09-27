@@ -1,5 +1,5 @@
-import CaseStudyLayout from "@/components/CaseStudyLayout";
-import LinkPreview from "@/components/ui/LinkPreview";
+import CaseStudyLayout from "@/ui/CaseStudyLayout";
+import LinkPreview from "@/ui/LinkPreview";
 import { getLinkPreviews, ImageData } from "@/lib/scanner";
 import { GetStaticProps, NextPage } from "next";
 import Image from "next/future/image";
@@ -8,9 +8,9 @@ import RickAndMortyHero from '@/public/images/projects/rickandmorty-hero.png'
 import RickAndMortyPages from '@/public/images/projects/rickandmorty-pages.png'
 
 import { styled } from "@/stitches.config";
-import Box from "@/components/common/Box";
-import Paragraph from "@/components/common/Paragraph";
-import Code from "@/components/common/Code";
+import Box from "@/ui/Box";
+import Paragraph from "@/ui/Paragraph";
+import Code from "@/ui/Code";
 
 const StyledHero = styled(Image, {
 	marginTop: '5rem',

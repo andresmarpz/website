@@ -1,4 +1,4 @@
-import CaseStudyLayout from "@/components/CaseStudyLayout";
+import CaseStudyLayout from "@/ui/CaseStudyLayout";
 import { styled } from "@/stitches.config";
 import { NextPage } from "next";
 import Image from 'next/future/image';
@@ -6,9 +6,9 @@ import Image from 'next/future/image';
 import BasementHero from '@/public/images/projects/basement-hero.png'
 import BasementCart from '@/public/images/projects/basement-cart.png'
 
-import Box from "@/components/common/Box";
-import Paragraph from "@/components/common/Paragraph";
-import Code from "@/components/common/Code";
+import Box from "@/ui/Box";
+import Paragraph from "@/ui/Paragraph";
+import Code from "@/ui/Code";
 
 const StyledDescription = styled('span', {
 	color: '$slate11'

@@ -1,7 +1,7 @@
 import Image from "next/future/image";
 import RYMH from '@/public/images/projects/rickandmorty-hero.png'
 import { styled } from "@/stitches.config";
-import Box from "@/components/common/Box";
+import Box from "@/ui/Box";
 
 const StyledImage = styled(Image, {
 	borderRadius: 8,

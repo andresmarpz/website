@@ -1,13 +1,13 @@
-import Box from '@/components/common/Box';
-import Paragraph from '@/components/common/Paragraph';
+import Box from '@/ui/Box';
+import Paragraph from '@/ui/Paragraph';
 import { css, keyframes, styled } from '@/stitches.config';
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
-import CheckIcon from '@/components/svg/CheckIcon';
+import CheckIcon from '@/ui/svg/CheckIcon';
 
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { lime, red, violet } from '@radix-ui/colors';
-import Spinner from '@/components/svg/Spinner';
+import Spinner from '@/ui/svg/Spinner';
 import getActivity from '@/lib/activity';
 
 const opacityIn = keyframes({
