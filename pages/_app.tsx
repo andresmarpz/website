@@ -3,6 +3,8 @@ import { globalCss } from '@/stitches.config';
 import Layout from '@/ui/Layout';
 import { useScrollRestoration } from '@/lib/useScrollRestoration';
 import { RealViewportProvider } from 'next-real-viewport';
+import { DefaultSeo } from 'next-seo'
+import { seo } from '@/lib/seo';
 
 const globalStyles = globalCss({
 	'*': {
@@ -29,6 +31,7 @@ export default function Application({ Component, pageProps, router }: AppProps) 
     return (
 		<RealViewportProvider>
 			<Layout>
+				<DefaultSeo {...seo} />
 				<Component {...pageProps}/>
 			</Layout>
 		</RealViewportProvider>
