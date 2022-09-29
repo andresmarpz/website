@@ -9,6 +9,11 @@ import * as Checkbox from '@radix-ui/react-checkbox';
 import { lime, red, violet } from '@radix-ui/colors';
 import Spinner from '@/ui/svg/Spinner';
 import getActivity from '@/lib/activity';
+import TitleStyle from '@/ui/TitleStyle';
+
+const Title = styled('h1', TitleStyle, {
+	fontSize: 24
+})
 
 const opacityIn = keyframes({
     '0%': {
@@ -208,7 +213,7 @@ const Contact: NextPage = () => {
 
     return (
         <div>
-            <h1>Let&apos;s Talk 👋</h1>
+            <Title>Let&apos;s Talk 👋</Title>
             <Paragraph>
                 Don&apos;t hesitate to contact me if you have a question,
                 proposal, or just want to have a chat, I&apos;d love to hear

@@ -21,7 +21,9 @@ const Title = styled('h1', TitleStyle, {
 const Subtitle = styled('h2', TitleStyle);
 
 const Section = styled('section', {
-  marginTop: '6rem'
+  '&:not(:first-child)': {
+	paddingTop: '6vh'
+  }
 });
 
 const HireMe: React.FC = () => {
@@ -49,8 +51,8 @@ const Home: NextPage = () => {
         <Title>
           Hey! I&apos;m Andrew. I&apos;m a guy passionate about the web.
         </Title>
-        <Paragraph>
-          <RoughNotationGroup>
+        <RoughNotationGroup>
+          <Paragraph>
             The thing I love the most is the ability to create something that
             can be used by
             <RoughNotationText
@@ -66,8 +68,9 @@ const Home: NextPage = () => {
             Have you ever come across a sleek design, a delightful interaction
             or a magical detail that made you feel something? It&apos;s
             wonderful.
-            <br />
-            <br />
+          </Paragraph>
+          <br />
+          <Paragraph>
             I&apos;m a 20-year-old student from Uruguay, currently enrolled in
             <RoughNotationText
               config={{
@@ -87,8 +90,9 @@ const Home: NextPage = () => {
             </RoughNotationText>{' '}
             web-development bootcamp, where we practice our soft-skills and
             learn to work as a team to deliver bi-weekly tasks.
-            <br />
-            <br />
+          </Paragraph>
+          <br />
+          <Paragraph>
             As of now, I&apos;m looking for a job as a
             <RoughNotationText
               config={{
@@ -99,8 +103,8 @@ const Home: NextPage = () => {
             </RoughNotationText>
             , where I can learn, grow and get to invest time in what I love.{' '}
             <HireMe />
-          </RoughNotationGroup>
-        </Paragraph>
+          </Paragraph>
+        </RoughNotationGroup>
       </Section>
 
       <Section>
