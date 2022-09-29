@@ -1,44 +1,39 @@
-import Layout from '@/components/Layout';
-import '@/styles/globals.css';
-import type { AppProps } from 'next/app';
-import Head from 'next/head';
-import Router from 'next/router';
-import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
-import { useEffect } from 'react';
+import { AppProps } from 'next/app';
+import { globalCss } from '@/stitches.config';
+import Layout from '@/ui/Layout';
+import { useScrollRestoration } from '@/lib/useScrollRestoration';
+import { RealViewportProvider } from 'next-real-viewport';
+import { DefaultSeo } from 'next-seo'
+import { seo } from '@/lib/seo';
 
-export default function App({ Component, pageProps }: AppProps) {
-    useEffect(() => {
-        Router.events.on('routeChangeStart', () => NProgress.start());
-        Router.events.on('routeChangeComplete', () => NProgress.done());
-        Router.events.on('routeChangeError', () => NProgress.done());
+const globalStyles = globalCss({
+	'*': {
+        boxSizing: 'border-box'
+    },
+    'html, body': {
+        padding: 0,
+        margin: 0,
+        fontFamily: `-apple-system, Inter, BlinkMacSystemFont, "Helvetica Neue", sans-serif`
+    },
+	'h1, h2, h3, h4, h5, h6': {
+		margin: 0
+	},
+	// prevent svg from overlapping text around notations
+	'.rough-annotation': {
+		zIndex: -1
+	}
+})
 
-        return () => {
-            Router.events.off('routeChangeStart', () => NProgress.start());
-            Router.events.off('routeChangeComplete', () => NProgress.done());
-            Router.events.off('routeChangeError', () => NProgress.done());
-        };
-    }, []);
+export default function Application({ Component, pageProps, router }: AppProps) {
+	globalStyles()
+	useScrollRestoration(router);
 
     return (
-        <>
-            <Head>
-                <title>Andrés Martínez</title>
-                <meta
-                    name="description"
-                    content="andres martinez personal website andresmarpz uruguay"
-                />
-                <meta charSet="utf-8" />
-                <meta
-                    name="viewport"
-                    content="width=device-width,initial-scale=1"
-                />
-                <meta name="mobile-web-app-capable" content="yes" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
-        </>
-    );
+		<RealViewportProvider>
+			<Layout>
+				<DefaultSeo {...seo} />
+				<Component {...pageProps}/>
+			</Layout>
+		</RealViewportProvider>
+	);
 }

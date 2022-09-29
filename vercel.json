@@ -13,32 +13,24 @@
     ],
     "redirects": [
         {
-            "source": "/resume",
-            "destination": "/andres-martinez-cv-2022.pdf"
+            "source": "/basement",
+            "destination": "https://basement.andresmarpz.com"
         },
-        {
-            "source": "/cv",
-            "destination": "/andres-martinez-cv-2022.pdf"
-        },
-		{
-			"source": "/resume.pdf",
-			"destination": "/andres-martinez-cv-2022.pdf"
-		},
-		{
-			"source": "/cv.pdf",
-			"destination": "/andres-martinez-cv-2022.pdf"
-		},
-		{
-			"source": "/basement",
-			"destination": "https://basement.andresmarpz.com"
-		},
 		{
 			"source": "/rickandmorty",
-			"destination": "https://rickandmorty.andresmarpz.com"
+			"destination" :"https://rickandmorty.andresmarpz.com"
 		},
 		{
 			"source": "/ui",
 			"destination": "https://ui.andresmarpz.com"
-		}
-	]
+		},
+        {
+            "source": "/resume",
+            "destination": "/andres-martinez-cv2021.pdf"
+        },
+        {
+            "source": "/cv",
+            "destination": "/andres-martinez-cv2021.pdf"
+        }
+    ]
 }

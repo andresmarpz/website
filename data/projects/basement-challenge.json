@@ -1,9 +1,0 @@
-{
-    "title": "Basement Challenge",
-    "description": "Implemented provided figma design into a responsive website.",
-	"techStack": "TypeScript, Next.js, Stitches & Radix",
-    "link": "https://basement.andresmarpz.com/",
-    "github": "https://github.com/andresmarpz/basement-challenge",
-	"image": "/images/projects/basement.png",
-    "index": 2
-}

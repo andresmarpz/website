@@ -1,102 +1,178 @@
-import { getProjects, Project } from '@/helper/projects';
+import CaseStudy from '@/ui/CaseStudy';
+import Box from '@/ui/Box';
+import RoughNotationGroup from '@/ui/primitives/RoughNotationGroup';
+import RoughNotationText from '@/ui/primitives/RoughNotationText';
+import { styled } from '@/stitches.config';
+import { amber, blue, green, red, violet } from '@radix-ui/colors';
+import { NextPage } from 'next';
+import React from 'react';
 
-import ProjectCard from '@/components/ProjectCard';
-import Social from '@/components/Social';
-import Image from 'next/image';
-import Link from 'next/link';
+import RickAndMorty from '../public/images/projects/rickandmorty.png';
+import Basement from '../public/images/projects/basement.png';
+import Paragraph from '@/ui/Paragraph';
+import TitleStyle from '@/ui/TitleStyle';
+import NextLink from 'next/link';
+import Link from '@/ui/Link';
 
-import github from '@/public/svgs/github.svg';
-import linkedin from '@/public/svgs/linkedin.svg';
-import twitter from '@/public/svgs/twitter.svg';
+const Title = styled('h1', TitleStyle, {
+  fontSize: 24
+});
 
-interface props {
-    projects: Project[];
-}
+const Subtitle = styled('h2', TitleStyle);
 
-export function getStaticProps() {
-    const projects = getProjects(4);
+const Section = styled('section', {
+  '&:not(:first-child)': {
+	paddingTop: '6vh'
+  }
+});
 
-    return {
-        props: { projects }
-    };
-}
+const HireMe: React.FC = () => {
+  return (
+    <NextLink href="/contact" passHref>
+      <Link>
+        <RoughNotationText
+          config={{
+            type: 'circle',
+            color: blue.blue5,
+            animationDuration: 1500,
+            multiline: false
+          }}>
+          Hire me?
+        </RoughNotationText>
+      </Link>
+    </NextLink>
+  );
+};
 
-export default function Home({ projects }: props) {
-    return (
-        <main>
-            <h1 className="rounded-md  text-gray-900 text-5xl font-bold mt-20">
-                Hello! I'm Andrew.
-            </h1>
-            <p className="text-gray-700 text-lg mt-3">
-                I'm a Frontend Developer from Uruguay. I enjoy designing and
-                developing UIs. The technologies I'm currently into are{' '}
-                <b>TypeScript</b> & <b>Next.js</b>.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3 items-center">
-                <Image
-                    src="https://avatars.githubusercontent.com/u/78830288?v=4"
-                    width={40}
-                    height={40}
-                    alt={'github avatar'}
-                    className="rounded-full"
-                />
-                <Social
-                    src={github}
-                    alt="github logo"
-                    href="https://github.com/andresmarpz"
-                    label="Github"
-                />
-                <Social
-                    src={twitter}
-                    alt="twitter logo"
-                    href="https://twitter.com/andresmarpz"
-                    label="Twitter"
-                />
-                <Social
-                    src={linkedin}
-                    alt="linkedin logo"
-                    href="https://linkedin.com/in/andresmarpz"
-                    label="LinkedIn"
-                />
-            </div>
+const Home: NextPage = () => {
+  return (
+    <div>
+      <Section id="about">
+        <Title>
+          Hey! I&apos;m Andrew. I&apos;m a guy passionate about the web.
+        </Title>
+        <RoughNotationGroup>
+          <Paragraph>
+            The thing I love the most is the ability to create something that
+            can be used by
+            <RoughNotationText
+              config={{
+                type: 'highlight',
+                color: red.red5,
+                padding: 0,
+                animationDuration: 1000
+              }}>
+              anyone, anywhere, at any time
+            </RoughNotationText>
+            . How cool is that? <br />
+            Have you ever come across a sleek design, a delightful interaction
+            or a magical detail that made you feel something? It&apos;s
+            wonderful.
+          </Paragraph>
+          <br />
+          <Paragraph>
+            I&apos;m a 20-year-old student from Uruguay, currently enrolled in
+            <RoughNotationText
+              config={{
+                type: 'highlight',
+                color: violet.violet6,
+                animationDuration: 1000
+              }}>
+              Computer Engineering at UdelaR
+            </RoughNotationText>
+            , and taking part in{' '}
+            <RoughNotationText
+              config={{
+                type: 'highlight',
+                color: green.green5
+              }}>
+              Jóvenes a Programar
+            </RoughNotationText>{' '}
+            web-development bootcamp, where we practice our soft-skills and
+            learn to work as a team to deliver bi-weekly tasks.
+          </Paragraph>
+          <br />
+          <Paragraph>
+            As of now, I&apos;m looking for a job as a
+            <RoughNotationText
+              config={{
+                type: 'highlight',
+                color: amber.amber4
+              }}>
+              Frontend Developer
+            </RoughNotationText>
+            , where I can learn, grow and get to invest time in what I love.{' '}
+            <HireMe />
+          </Paragraph>
+        </RoughNotationGroup>
+      </Section>
 
-            <hr className="mt-4" />
+      <Section>
+        <Subtitle>Skills</Subtitle>
+        <Paragraph>
+          Through my studies, I&apos;ve learned a solid amount of computer
+          science and web development concepts, and have dedicated a lot of my
+          free time to apply these in personal and academic projects.
+        </Paragraph>
 
-            {/* Work section */}
-            <section className="mt-16">
-                <Link href="/work">
-                    <a className="text-gray-900 text-2xl font-bold hover:underline">
-                        Work
-                    </a>
-                </Link>
+        <Box
+          as="ul"
+          css={{
+            color: '$slate12',
+            listStyle: 'none',
+            display: 'grid',
+            gap: 10,
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))'
+          }}>
+          <li>HTML & CSS</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>Git</li>
+          <li>PostgreSQL</li>
+          <li>MongoDB</li>
+          <li>Prisma</li>
+        </Box>
+      </Section>
 
-                <p className="text-gray-700 text-lg">
-                    These are some of the projects I like the most. You can find
-                    more of what I'm building{' '}
-                    <Link href="/work">
-                        <a className="hover:underline">
-                            <b>here</b>
-                        </a>
-                    </Link>
-                    !
-                </p>
-                <div className="grid grid-cols-1 gap-8 mt-6 pb-10">
-                    {projects.map((project) => (
-                        <ProjectCard
-                            key={project.title}
-                            title={project.title}
-                            techStack={project.techStack}
-                            description={project.description}
-                            link={project.link}
-                            github={project.github}
-                            image={project.image}
-                        />
-                    ))}
-                </div>
-            </section>
-            {/* <section className="mt-10">
-                <h2 className="text-gray-900 text-2xl font-bold">Snippets</h2>
-            </section> */}
-        </main>
-    );
-}
+      <Section id="projects">
+        <Subtitle>Projects</Subtitle>
+        <Paragraph css={{ marginBottom: '3rem' }}>
+          I like to always have a project in mind to keep learning and
+          challenging myself, learning new technologies and improving my design
+          skills.
+          <br />
+          <br />
+          These are case studies of the most relevant work I&apos;ve done.
+        </Paragraph>
+
+        <Box
+          css={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 48
+          }}>
+          <CaseStudy
+            src={RickAndMorty}
+            href="/project/rickandmorty"
+            title="Rick and Morty"
+            description="A web app that allows you to search for characters, locations or episodes from the Rick and Morty TV show."
+          />
+          <CaseStudy
+            src={Basement}
+            href="/project/basement"
+            title="Basement Challenge"
+            description="Responsive e-commerce website implemented from a Figma design file."
+          />
+        </Box>
+      </Section>
+
+      <Section>
+        <Subtitle>Contact</Subtitle>
+      </Section>
+    </div>
+  );
+};
+
+export default Home;
