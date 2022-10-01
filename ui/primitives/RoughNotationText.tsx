@@ -26,10 +26,6 @@ const RoughNotationText: React.FC<{
 			});
 			context.annotations.push(annotationRef.current);
 		}
-
-		return () => {
-			annotationRef.current?.remove();
-		}
 	}, [mounted, config, context])
 
 	return <span ref={element}>{' '}{children}</span>
