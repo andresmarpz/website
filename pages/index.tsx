@@ -13,6 +13,7 @@ import Paragraph from '@/ui/Paragraph';
 import TitleStyle from '@/ui/TitleStyle';
 import NextLink from 'next/link';
 import Link from '@/ui/Link';
+import PaperPlane from '@/ui/svg/PaperPlane';
 
 const Title = styled('h1', TitleStyle, {
   fontSize: 24
@@ -169,7 +170,19 @@ const Home: NextPage = () => {
       </Section>
 
       <Section>
-        <Subtitle>Contact</Subtitle>
+		<Box css={{ textAlign: 'center', marginY: 24 }}>
+			<NextLink href="/contact" passHref>
+				<Link css={{
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					gap: 12
+				}}>
+					<Subtitle css={{ fontSize: 32, marginBottom: 1 }}>Contact</Subtitle>
+					<PaperPlane />
+				</Link>
+			</NextLink>
+		</Box>
       </Section>
     </div>
   );
