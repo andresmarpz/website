@@ -2,6 +2,7 @@ import { css, styled } from '@/stitches.config';
 import React from 'react';
 import NextLink from 'next/link';
 import Box from './Box';
+import Link from './Link';
 
 /**
  *  Header component
@@ -50,11 +51,20 @@ const Header: React.FC = () => {
  */
 
 const StyledFooter = styled('footer', {
-  paddingY: 40
+  paddingY: 40,
+  display: 'flex',
+  justifyContent: 'flex-end',
+  gap: 10
 });
 
 const Footer: React.FC = () => {
-  return <StyledFooter>twitter github linkedin</StyledFooter>;
+  return (
+    <StyledFooter>
+      <Link href="https://twitter.com/andresmarpz" target="_blank">Twitter</Link>
+      <Link href="https://github.com/andresmarpz" target="_blank">GitHub</Link>
+      <Link href="https://linkedin.com/in/andresmarpz" target="_blank">LinkedIn</Link>
+    </StyledFooter>
+  );
 };
 
 /**
