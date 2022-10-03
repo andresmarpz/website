@@ -23,7 +23,7 @@ const Subtitle = styled('h2', TitleStyle);
 
 const Section = styled('section', {
   '&:not(:first-child)': {
-	paddingTop: '6vh'
+    paddingTop: '6vh'
   }
 });
 
@@ -155,13 +155,18 @@ const Home: NextPage = () => {
             gap: 48
           }}>
           <CaseStudy
-            src={RickAndMorty}
+            options={{
+              src: RickAndMorty,
+              priority: true
+            }}
             href="/project/rickandmorty"
             title="Rick and Morty"
             description="A web app that allows you to search for characters, locations or episodes from the Rick and Morty TV show."
           />
           <CaseStudy
-            src={Basement}
+            options={{
+              src: Basement
+            }}
             href="/project/basement"
             title="Basement Challenge"
             description="Responsive e-commerce website implemented from a Figma design file."
@@ -170,19 +175,22 @@ const Home: NextPage = () => {
       </Section>
 
       <Section>
-		<Box css={{ textAlign: 'center', marginY: 24 }}>
-			<NextLink href="/contact" passHref>
-				<Link css={{
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center',
-					gap: 12
-				}}>
-					<Subtitle css={{ fontSize: 32, marginBottom: 1 }}>Contact</Subtitle>
-					<PaperPlane />
-				</Link>
-			</NextLink>
-		</Box>
+        <Box css={{ textAlign: 'center', marginY: 24 }}>
+          <NextLink href="/contact" passHref>
+            <Link
+              css={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: 12
+              }}>
+              <Subtitle css={{ fontSize: 32, marginBottom: 1 }}>
+                Contact
+              </Subtitle>
+              <PaperPlane />
+            </Link>
+          </NextLink>
+        </Box>
       </Section>
     </div>
   );
