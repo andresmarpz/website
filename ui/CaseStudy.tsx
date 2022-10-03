@@ -1,5 +1,5 @@
 import { styled } from '@/stitches.config';
-import Image, { ImageProps, StaticImageData } from 'next/image';
+import Image, { type ImageProps } from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import Box from '@/ui/Box';
