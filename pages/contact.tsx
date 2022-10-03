@@ -243,8 +243,7 @@ const Contact: NextPage = () => {
             <Box css={{ marginTop: '4rem', display: 'flex', flexDirection: 'column', gap: 4 }}>
                 <Box>
 					It&apos;s currently {getActivity(new Date()).time} in Uruguay 🇺🇾 
-					— so I&apos;m probably <em>{getActivity(new Date()).activity}</em>. 
-					I&apos;ll get back to you as soon as possible!				
+					— I&apos;ll get back to you as soon as possible!				
 				</Box>
                 <StyledForm onSubmit={handleSubmit} spellCheck="false">
                     <FieldSet disabled={success || error}>
