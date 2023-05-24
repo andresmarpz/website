@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1684877367848,
+      "tag": "0000_aromatic_hemingway",
+      "breakpoints": false
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1684879580349,
+      "tag": "0001_living_monster_badoon",
+      "breakpoints": false
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1684879823385,
+      "tag": "0002_curved_marvel_apes",
+      "breakpoints": false
+    }
+  ]
+}

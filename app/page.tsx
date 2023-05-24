@@ -1,16 +1,27 @@
-export default function IndexPage() {
+import PostViews from '@/components/post-views';
+import { getPostMetadata } from '@/lib/get-post-metadata';
+import { getPosts } from '@/lib/get-posts';
+import Link from 'next/link';
+import { Suspense } from 'react';
+
+export default async function IndexPage() {
+  const posts = getPosts();
+
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
-          Beautifully designed components <br className="hidden sm:inline" />
-          built with Radix UI and Tailwind CSS.
-        </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
-        </p>
-      </div>
-    </section>
+    <div>
+      Posts:
+      {posts.map((post) => {
+        const metadata = getPostMetadata(post.slug);
+
+        return (
+          <Link href={`/blog/${post.slug}`}>
+            {metadata?.title} <Suspense fallback={'Loading..'}>
+              {/* @ts-expect-error RSC */}
+              <PostViews slug={post.slug} />
+            </Suspense>
+          </Link>
+        );
+      })}
+    </div>
   );
 }

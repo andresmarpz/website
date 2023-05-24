@@ -1,0 +1,4 @@
+ALTER TABLE "posts" RENAME COLUMN "id" TO "slug";
+ALTER TABLE "posts" ALTER COLUMN "slug" SET DATA TYPE text;
+ALTER TABLE "posts" DROP COLUMN IF EXISTS "title";
+ALTER TABLE "posts" DROP COLUMN IF EXISTS "subtitle";
