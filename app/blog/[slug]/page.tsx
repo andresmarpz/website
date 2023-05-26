@@ -28,4 +28,3 @@ export default async function Post({ params }: { params: { slug: string } }) {
 }
 
 export const dynamic = 'force-static';
-export const revalidate = false;
