@@ -22,12 +22,13 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
   const { slug } = await req.json();
 
+  console.log('hello');
   // if slug is not defined, return 400
   if (!slug) return new Response('Slug is required', { status: 400 });
   if (!getPost(slug)) return new Response('Post not found', { status: 404 });
 
-  const views = await getPostViews(slug);
-  await incrementPostViews(slug, views);
+  const views = (await getPostViews(slug)) ?? 0;
+  await incrementPostViews(slug, views + 1);
 
   return new Response(undefined, {
     status: 200

@@ -9,7 +9,7 @@ export default function Blog() {
 
   return (
     <main>
-      <ul>
+      <ul className="m-auto max-w-[675px]">
         {posts.map((post) => {
           const metadata = getPostMetadata(post.slug);
 
@@ -17,7 +17,7 @@ export default function Blog() {
             <li className="py-2" key={post.slug}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="flex items-center justify-between text-white">
+                className="bg- flex items-center justify-between text-white">
                 <h3 className="font-medium">{metadata?.title}</h3>
 
                 <span className="ml-1 flex items-center gap-1 text-gray-400">
@@ -25,10 +25,9 @@ export default function Blog() {
                     fallback={
                       <div className="h-4 w-10 animate-pulse rounded bg-gray-700" />
                     }>
-                    {/* @ts-expect-error RSC */}
-                    <ViewCounter slug={post.slug} trackViews={false} />
+                    <ViewCounter slug={post.slug} />
                   </Suspense>
-                  ·
+                  •
                   <span>
                     {metadata?.date &&
                       new Date(metadata.date).toLocaleDateString('en-US', {
