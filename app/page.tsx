@@ -15,8 +15,8 @@ export default async function IndexPage() {
 
         return (
           <Link href={`/blog/${post.slug}`}>
-            {metadata?.title} <Suspense fallback={'Loading..'}>
-              {/* @ts-expect-error RSC */}
+            {metadata?.title}{' '}
+            <Suspense fallback={'Loading..'}>
               <PostViews slug={post.slug} />
             </Suspense>
           </Link>
