@@ -1,4 +1,3 @@
-import ViewCounter from '@/app/blog/view-counter';
 import ViewTracker from '@/app/blog/view-tracker';
 import { getPost } from '@/lib/get-post';
 import { getPosts } from '@/lib/get-posts';

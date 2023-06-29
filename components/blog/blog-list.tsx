@@ -1,4 +1,5 @@
 import BlogItem from '@/components/blog/blog-item';
+import { getPostMetadata } from '@/lib/get-post-metadata';
 import { getPosts } from '@/lib/get-posts';
 
 interface Props {
@@ -7,11 +8,14 @@ interface Props {
 
 export default function BlogList({ length }: Props) {
   const posts = getPosts();
+
   return (
     <ul className="m-auto max-w-[675px]">
-      {posts.slice(0, length ?? posts.length).map((post) => (
-        <BlogItem post={post} />
-      ))}
+      {posts.slice(0, length ?? posts.length).map((post) => {
+        const metadata = getPostMetadata(post.slug);
+
+        return metadata ? <BlogItem slug={post.slug} {...metadata} /> : null;
+      })}
     </ul>
   );
 }
