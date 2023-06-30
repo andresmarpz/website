@@ -14,7 +14,9 @@ export default function BlogList({ length }: Props) {
       {posts.slice(0, length ?? posts.length).map((post) => {
         const metadata = getPostMetadata(post.slug);
 
-        return metadata ? <BlogItem slug={post.slug} {...metadata} /> : null;
+        return metadata ? (
+          <BlogItem key={post.slug} slug={post.slug} {...metadata} />
+        ) : null;
       })}
     </ul>
   );
