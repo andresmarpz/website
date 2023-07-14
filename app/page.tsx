@@ -1,27 +1,26 @@
-import PostViews from '@/components/post-views';
-import { getPostMetadata } from '@/lib/get-post-metadata';
-import { getPosts } from '@/lib/get-posts';
-import Link from 'next/link';
-import { Suspense } from 'react';
+export const metadata = {
+  title: 'Andrés Martínez'
+};
 
-export default async function IndexPage() {
-  const posts = getPosts();
-
+export default async function Home() {
   return (
-    <div>
-      Posts:
-      {posts.map((post) => {
-        const metadata = getPostMetadata(post.slug);
+    <main>
+      <h1 className="mb-2 text-gray-50">hey, i&apos;m andrés</h1>
+      <h2 className="text-gray-300">
+        i&apos;m a software engineer, driven by curiosity about computers and
+        technology, dedicated to creating polished user interfaces on the web.
+        currently working as frontend developer at{' '}
+        <a
+          className="underline decoration-slate-400 underline-offset-2"
+          href="https://qubika.com"
+          rel="noreferrer noopener"
+          target="_blank">
+          Qubika
+        </a>
+        .
+      </h2>
 
-        return (
-          <Link href={`/blog/${post.slug}`}>
-            {metadata?.title}{' '}
-            <Suspense fallback={'Loading..'}>
-              <PostViews slug={post.slug} />
-            </Suspense>
-          </Link>
-        );
-      })}
-    </div>
+      <p></p>
+    </main>
   );
 }

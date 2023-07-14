@@ -1,6 +1,5 @@
 import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
-import Header from '@/components/header';
 import { cn } from '@/lib/utils';
 
 const sansFont = Inter({
@@ -17,8 +16,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
-        className={cn('mt-10 px-4 font-sans antialiased', sansFont.variable)}>
-        <Header />
+        className={cn(
+          'm-auto mt-20 max-w-[675px] px-4 font-sans text-gray-100 antialiased',
+          sansFont.variable
+        )}>
         {children}
       </body>
     </html>

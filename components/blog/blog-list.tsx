@@ -10,7 +10,7 @@ export default function BlogList({ length }: Props) {
   const posts = getPosts();
 
   return (
-    <ul className="m-auto max-w-[675px]">
+    <ul className="m-auto flex flex-col gap-1">
       {posts.slice(0, length ?? posts.length).map((post) => {
         const metadata = getPostMetadata(post.slug);
 
