@@ -1,9 +1,9 @@
 import { db } from '@/drizzle/drizzle';
-import { Post, posts } from '@/drizzle/schema';
+import { InsertPost, posts } from '@/drizzle/schema';
 
 export const incrementPostViews = async (
-  slug: Post['slug'],
-  views: Post['views']
+  slug: InsertPost['slug'],
+  views: InsertPost['views']
 ) =>
   await db
     .insert(posts)
@@ -11,8 +11,7 @@ export const incrementPostViews = async (
       slug,
       views
     })
-    .onConflictDoUpdate({
-      target: posts.slug,
+    .onDuplicateKeyUpdate({
       set: {
         views
       }

@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1706730941866,
+      "tag": "0000_slim_famine",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1706734148973,
+      "tag": "0001_plain_sentry",
+      "breakpoints": true
+    }
+  ]
+}
