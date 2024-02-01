@@ -28,7 +28,6 @@
     "next": "^14.0.4",
     "next-mdx-remote": "^4.4.1",
     "next-themes": "^0.2.1",
-    "postgres": "^3.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.2.0",
