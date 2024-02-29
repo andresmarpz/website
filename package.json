@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "postinstall": "basehub",
     "build": "next build",
     "start": "next start",
@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit",
     "migrations:generate": "drizzle-kit generate:mysql --schema=./drizzle/schema.ts --out=./drizzle/migrations",
     "migrations:run": "bun run drizzle/migrate.ts",
-    "db:push": "drizzle-kit push:mysql",
+    "db:push": "drizzle-kit push:pg",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
@@ -21,10 +21,10 @@
     "@next/mdx": "^14.1.0",
     "@planetscale/database": "latest",
     "@types/mdx": "^2.0.11",
+    "@vercel/postgres": "^0.7.2",
     "basehub": "^2.0.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "drizzle-orm": "latest",
     "gray-matter": "^4.0.3",
     "lucide-react": "0.341.0",
     "next": "latest",
@@ -43,7 +43,6 @@
     "@typescript-eslint/parser": "^7.1.0",
     "autoprefixer": "^10.4.17",
     "dotenv": "^16.4.5",
-    "drizzle-kit": "^0.20.14",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",
