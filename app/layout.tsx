@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google';
-import '@/styles/globals.css';
+import '@/app/globals.css';
 import { cn } from '@/lib/utils';
 
 const sansFont = Inter({
