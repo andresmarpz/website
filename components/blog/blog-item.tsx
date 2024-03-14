@@ -24,7 +24,7 @@ export default function BlogItem({ title, slug, date }: Props) {
           }>
           <Suspense
             fallback={
-              <div className="h-4 w-10 animate-pulse rounded bg-gray-700" />
+              <div className="h-[2px] w-[80px] bg-gradient-to-r from-transparent via-slate-400 to-transparent opacity-20" />
             }>
             <ViewCounter slug={slug} />
           </Suspense>

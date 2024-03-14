@@ -8,20 +8,23 @@ type Params = {
   };
 };
 
-export const GET = (req: Request, params: Params) => handler(req, params);
-export const POST = (req: Request, params: Params) => handler(req, params);
+export const runtime = 'edge';
+export const preferredRegion = 'gru1';
 
-async function handler(req: Request, { params: { slug } }: Params) {
+export const GET = async (req: Request, { params: { slug } }: Params) => {
+  if (!slug) return new Response('Slug is required', { status: 400 });
+
+  const views = await getPostViews(slug);
+  if (!views) return new Response('Post not found', { status: 404 });
+
+  return new Response(JSON.stringify({ views }));
+};
+
+export const POST = async (req: Request, { params: { slug } }: Params) => {
   if (!slug) return new Response('Slug is required', { status: 400 });
   if (!getPost(slug)) return new Response('Post not found', { status: 404 });
 
-  const views = (await getPostViews(slug)) ?? 0;
-
-  // if it's a POST request we want to increase, otherwise it's a GET
-  // so we only want to create the post without views
-  const isPostRequest = req.method === 'POST';
-  if (isPostRequest || !views)
-    await incrementPostViews(slug, views + (isPostRequest ? 1 : 0));
+  const views = await incrementPostViews(slug);
 
   return new Response(JSON.stringify({ views }));
-}
+};

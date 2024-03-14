@@ -2,11 +2,11 @@ export const metadata = {
   title: 'Andrés Martínez'
 };
 
-export default async function Home() {
+export default function Home() {
   return (
     <main>
-      <h1 className="motion-safe:fade-in slide-in-from-top-2 mb-2 text-gray-50">
-        hey, i&apos;m andrés
+      <h1 className="mb-2 text-gray-50 slide-in-from-top-2 motion-safe:fade-in">
+        Andrés Martínez
       </h1>
       <h2 className="text-gray-300">
         i&apos;m a software engineer, driven by curiosity about computers and
