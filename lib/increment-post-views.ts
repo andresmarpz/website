@@ -1,18 +1,16 @@
-import { db } from '@/drizzle/drizzle';
-import { InsertPost, posts } from '@/drizzle/schema';
+import { sql } from '@vercel/postgres';
 
-export const incrementPostViews = async (
-  slug: InsertPost['slug'],
-  views: InsertPost['views']
-) =>
-  await db
-    .insert(posts)
-    .values({
-      slug,
-      views
-    })
-    .onDuplicateKeyUpdate({
-      set: {
-        views
-      }
-    });
+export const incrementPostViews = async (slug: string) => {
+  const result = await sql<{
+    id: number;
+    slug: string;
+    views: number;
+  }>`
+        INSERT INTO Posts (slug, views)
+        VALUES (${slug}, 1)
+        ON CONFLICT (slug) DO UPDATE
+        SET views = Posts.views + 1
+        RETURNING *
+    `;
+  return result.rows[0].views;
+};

@@ -1,10 +1,24 @@
-import fs from 'fs';
-import path from 'path';
+import { getPosts } from '@/lib/get-posts';
+import { QueryGenqlSelection, basehub } from 'basehub';
 
-export function getPost(slug: string) {
-  const postPath = path.join('_posts', `${slug}.mdx`);
-  const exists = fs.existsSync(postPath);
-  if (!exists) return null;
+export async function getPost(slug: string) {
+  const { blog } = await basehub().query({
+    blog: {
+      posts: {
+        __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
+        items: {
+          _id: true,
+          _title: true,
+          publishDate: true,
+          content: { json: { content: true } },
+          coverImage: { url: true },
+          subtitle: true
+        }
+      }
+    }
+  });
 
-  return fs.readFileSync(postPath, 'utf-8');
+  const [post] = blog.posts.items;
+
+  return post;
 }

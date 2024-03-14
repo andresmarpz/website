@@ -1,10 +1,12 @@
-import { db } from '@/drizzle/drizzle';
-import { posts } from '@/drizzle/schema';
-import { eq } from 'drizzle-orm';
+import { sql } from '@vercel/postgres';
 
-export const getPostViews = async (slug: string) =>
-  await db
-    .select()
-    .from(posts)
-    .where(eq(posts.slug, slug))
-    .then((res) => res[0]?.views);
+export const getPostViews = async (slug: string) => {
+  const result = await sql<{
+    views: number;
+  }>`
+  SELECT views
+  FROM Posts
+  WHERE slug = ${slug}
+`;
+  return result.rows[0].views;
+};

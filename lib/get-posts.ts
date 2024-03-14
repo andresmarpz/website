@@ -1,21 +1,23 @@
-import fs from 'fs';
-import path from 'path';
+import { basehub } from 'basehub';
 
-interface Post {
-  slug: string;
-}
-
-export function getPosts(): Post[] {
-  const files = fs
-    .readdirSync(path.join(process.cwd(), '_posts'))
-    .filter((filename) => filename.endsWith('.mdx'));
-
-  const posts = files.map((filename) => {
-    const slug = filename.replace('.mdx', '');
-    return {
-      slug
-    };
-  });
-
-  return posts;
+export async function getPosts() {
+  return basehub()
+    .query({
+      blog: {
+        posts: {
+          items: {
+            _title: true,
+            _slug: true,
+            subtitle: true,
+            publishDate: true,
+            content: {
+              json: {
+                content: true
+              }
+            }
+          }
+        }
+      }
+    })
+    .then((res) => res.blog.posts.items);
 }
