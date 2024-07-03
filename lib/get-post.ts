@@ -2,23 +2,47 @@ import { getPosts } from '@/lib/get-posts';
 import { QueryGenqlSelection, basehub } from 'basehub';
 
 export async function getPost(slug: string) {
-  const { blog } = await basehub().query({
+  const res = await basehub().query({
     blog: {
       posts: {
-        __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
         items: {
-          _id: true,
+          _slug: true,
           _title: true,
-          publishDate: true,
-          content: { json: { content: true } },
+          subtitle: true,
+          author: {
+            name: true,
+            avatar: {
+              url: true
+            },
+            role: true
+          },
+          category: {
+            _title: true
+          },
+          content: {
+            readingTime: true,
+            html: true,
+            markdown: true,
+            json: {
+              content: true,
+              toc: true
+            }
+          },
           coverImage: { url: true },
-          subtitle: true
+          meta: {
+            title: true,
+            description: true,
+            ogImage: {
+              url: true
+            }
+          },
+          publishDate: true
         }
       }
     }
   });
 
-  const [post] = blog.posts.items;
+  const [post] = res.blog.posts.items;
 
   return post;
 }

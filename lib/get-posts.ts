@@ -6,15 +6,11 @@ export async function getPosts() {
       blog: {
         posts: {
           items: {
-            _title: true,
+            _id: true,
             _slug: true,
+            _title: true,
             subtitle: true,
-            publishDate: true,
-            content: {
-              json: {
-                content: true
-              }
-            }
+            publishDate: true
           }
         }
       }

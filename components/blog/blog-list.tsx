@@ -14,7 +14,7 @@ export default async function BlogList({ length }: Props) {
         <BlogItem
           key={post._slug}
           title={post._title}
-          date={post.date!}
+          date={post.publishDate!}
           slug={post._slug}
         />
       ))}

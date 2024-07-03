@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
+import useSWR from 'swr';
 
 export default function ViewTracker({ slug }: { slug: string }) {
-  useEffect(() => {
-    fetch(`/api/views/${slug}`, { method: 'POST' });
-  }, [slug]);
+  useSWR(`/api/views/${slug}`, () =>
+    fetch(`/api/views/${slug}`, { method: 'POST' })
+  );
 
   return null;
 }

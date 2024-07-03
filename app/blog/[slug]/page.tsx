@@ -4,9 +4,7 @@ import { getPosts } from '@/lib/get-posts';
 import { RichText } from 'basehub/react-rich-text';
 import { notFound } from 'next/navigation';
 
-export const dynamic = 'force-dynamic';
-
-interface Params {
+interface Props {
   params: {
     slug: string;
   };
@@ -20,7 +18,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Params) {
+export async function generateMetadata({ params }: Props) {
   const post = await getPost(params.slug);
 
   if (!post) {
@@ -33,16 +31,18 @@ export async function generateMetadata({ params }: Params) {
   };
 }
 
-export default async function Post({ params }: Params) {
+export default async function Post({ params }: Props) {
   const post = await getPost(params.slug);
 
   if (!post) notFound();
 
-  const date = new Date(post.publishDate!).toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric'
-  });
+  const date = post.publishDate
+    ? new Date(post.publishDate).toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+      })
+    : 'Unpublished';
 
   return (
     <article>

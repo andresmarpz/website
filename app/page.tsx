@@ -5,7 +5,7 @@ export const metadata = {
 export default function Home() {
   return (
     <main>
-      <h1 className="mb-2 text-gray-50 slide-in-from-top-2 motion-safe:fade-in">
+      {/* <h1 className="mb-2 text-gray-50 slide-in-from-top-2 motion-safe:fade-in">
         Andrés Martínez
       </h1>
       <h2 className="text-gray-300">
@@ -22,7 +22,7 @@ export default function Home() {
         .
       </h2>
 
-      <p></p>
+      <p></p> */}
     </main>
   );
 }
