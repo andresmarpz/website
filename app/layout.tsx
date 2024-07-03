@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import '@/app/globals.css';
 import { cn } from '@/lib/utils';
+import Footer from '@/components/footer';
 
 const sansFont = Inter({
   subsets: ['latin'],
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           sansFont.variable
         )}>
         {children}
+        <Footer />
       </body>
     </html>
   );
