@@ -1,9 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
-    "postinstall": "basehub",
-    "build": "next build",
+    "dev": "basehub dev & next dev --turbo",
+    "build": "basehub && next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
@@ -32,6 +31,7 @@
     "next-themes": "^0.3.0",
     "react": "^19.0.0-rc-9c6806964f-20240703",
     "react-dom": "^19.0.0-rc-9c6806964f-20240703",
+    "swr": "^2.2.5",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },
