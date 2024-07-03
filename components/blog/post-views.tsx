@@ -1,9 +1,8 @@
-import { Post } from '@/drizzle/schema';
 import { getPostViews } from '@/lib/get-post-views';
 
-type Props = {
-  slug: Post['slug'];
-};
+interface Props {
+  slug: string;
+}
 
 export default async function PostViews({ slug }: Props) {
   const views = await getPostViews(slug);
