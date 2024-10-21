@@ -1,12 +1,13 @@
-import { sql } from '@vercel/postgres';
+import { db } from '@/db';
+import { posts } from '@/db/schema';
+import { eq } from 'drizzle-orm';
 
 export const getPostViews = async (slug: string) => {
-  const result = await sql<{
-    views: number;
-  }>`
-  SELECT views
-  FROM Posts
-  WHERE slug = ${slug}
-`;
-  return result.rows[0].views;
+  const results = await db
+    .select()
+    .from(posts)
+    .where(eq(posts.slug, slug))
+    .execute();
+  if (results.length) return results[0].views;
+  else return null;
 };

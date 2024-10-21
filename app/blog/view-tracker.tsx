@@ -4,7 +4,12 @@ import useSWR from 'swr';
 
 export default function ViewTracker({ slug }: { slug: string }) {
   useSWR(`/api/views/${slug}`, () =>
-    fetch(`/api/views/${slug}`, { method: 'POST' })
+    fetch(`/api/views`, {
+      method: 'POST',
+      body: JSON.stringify({
+        slug
+      })
+    })
   );
 
   return null;

@@ -29,34 +29,35 @@ export default function Clock() {
 
   return (
     <time
-      className="relative block size-10 rounded-full border origin-center"
+      className="relative block size-8 rotate-180 rounded-full border border-amber-50 antialiased"
       style={style}>
-      {/* <div className="absolute inset-1/2 -translate-y-1/2 -translate-x-1/2 bg-gray-700 rounded-full h-[3px] w-[3px] z-50" /> */}
+      {/* center dot */}
+      <div className="absolute left-1/2 top-1/2 size-px -translate-x-1/2 -translate-y-1/2 bg-amber-50" />
       {/* hour gauge */}
       <div
-        className="absolute left-1/2 top-1/2 h-[35%] w-px bg-red-500 rounded-full"
+        className="absolute left-1/2 top-1/2 h-1/4 w-px rounded-full bg-amber-50"
         style={{
-          transformOrigin: 'top',
+          transformOrigin: '0 0',
           transform:
-            'rotate(calc(var(--time-hours) * 30deg)) translate(-50%, -100%)'
+            'rotate(calc(var(--time-hours) * 30deg)) translate(-50%, 0%)'
         }}
       />
       {/* minutes gauge */}
       <div
-        className="absolute left-1/2 top-1/2 h-[40%] w-px bg-yellow-500 rounded-full"
+        className="absolute left-1/2 top-1/2 h-2/5 w-px rounded-full bg-amber-50"
         style={{
-          transformOrigin: 'top',
+          transformOrigin: '0 0',
           transform:
-            'rotate(calc(var(--time-minutes) * 6deg)) translate(-50%, -100%)'
+            'rotate(calc(var(--time-minutes) * 6deg)) translate(-50%, 0%)'
         }}
       />
       {/* seconds gauge */}
       <div
-        className="absolute left-1/2 top-1/2 h-[45%] w-px bg-blue-500 rounded-full"
+        className="absolute left-1/2 top-1/2 h-2/5 w-[0.5px] rounded-full bg-amber-50"
         style={{
-          transformOrigin: 'top',
+          transformOrigin: '0 0',
           transform:
-            'rotate(calc(var(--time-seconds) * 6deg)) translate(-50%, -100%)'
+            'rotate(calc(var(--time-seconds) * 6deg)) translate(-50%, 0%)'
         }}
       />
     </time>

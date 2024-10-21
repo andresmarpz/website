@@ -5,9 +5,9 @@ import { RichText } from 'basehub/react-rich-text';
 import { notFound } from 'next/navigation';
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -19,7 +19,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props) {
-  const post = await getPost(params.slug);
+  const { slug } = await params;
+  const post = await getPost(slug);
 
   if (!post) {
     return notFound();
@@ -32,7 +33,8 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function Post({ params }: Props) {
-  const post = await getPost(params.slug);
+  const { slug } = await params;
+  const post = await getPost(slug);
 
   if (!post) notFound();
 
@@ -56,7 +58,7 @@ export default async function Post({ params }: Props) {
         {post.content?.json.content}
       </RichText>
 
-      <ViewTracker slug={params.slug} />
+      <ViewTracker slug={slug} />
     </article>
   );
 }
