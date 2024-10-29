@@ -1,8 +1,11 @@
-import Clock from '@/components/footer/clock';
+import dynamic from 'next/dynamic';
+
+const Clock = dynamic(() => import('@/components/footer/clock'));
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="flex justify-between">
+      <span></span>
       <Clock />
     </footer>
   );
