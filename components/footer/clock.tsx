@@ -59,7 +59,7 @@ export default function Clock() {
               style={{
                 transformOrigin: '0 0',
                 transform:
-                  'rotate(calc(var(--time-hours) * 30deg)) translate(-50%, 0%)'
+                  'rotate(calc((var(--time-hours) * 30deg) + ((var(--time-minutes) / 2) * 1deg))) translate(-50%, 0%)'
               }}
             />
             {/* minutes gauge */}
