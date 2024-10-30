@@ -18,7 +18,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
-          'm-auto mt-20 max-w-[675px] bg-neutral-900 px-4 font-sans text-gray-100 antialiased',
+          'm-auto mt-32 max-w-[675px] bg-neutral-900 px-4 font-sans text-gray-100 antialiased',
           sansFont.variable
         )}>
         {children}
