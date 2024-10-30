@@ -17,7 +17,6 @@ function getCurrentTime() {
 
   const formatter = new Intl.DateTimeFormat('en-US', options);
   const date = formatter.format(now);
-  console.log(date);
 
   return {
     hour: now.getHours(),
