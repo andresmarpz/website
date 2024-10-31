@@ -28,7 +28,7 @@
     "drizzle-orm": "^0.35.2",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.447.0",
-    "next": "^15.0.3-canary.1",
+    "next": "^15.0.3-canary.2",
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.3.0",
     "react": "^19.0.0-rc-603e6108-20241029",
