@@ -42,14 +42,14 @@ export default function Home() {
       </p>
       <p className="mt-4 text-gray-400">
         Years passed by and I fell for the web platform. The power to craft
-        something that can be accessed anywhere, at anytime is just fascinating.
+        something that can be accessed anywhere, anytime, is just fascinating.
         Creating websites that feel polished and cared for gives me a joy that I
-        can&apos;t ever get bored of.
+        can&apos;t ever get enough of.
       </p>
       <p className="mt-4 text-gray-400">
-        For the most part, I focused on TypeScript, React and Next.js. Though I
-        enjoy a variety of other technologies and want to learn Go in the near
-        future.
+        For the most part, I focused on TypeScript, React and Next.js. Although
+        I enjoy a variety of other technologies and plan on learning Go in the
+        near future.
       </p>
     </main>
   );
