@@ -9,16 +9,6 @@ export async function getPost(slug: string) {
           _slug: true,
           _title: true,
           subtitle: true,
-          author: {
-            name: true,
-            avatar: {
-              url: true
-            },
-            role: true
-          },
-          category: {
-            _title: true
-          },
           content: {
             readingTime: true,
             html: true,

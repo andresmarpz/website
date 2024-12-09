@@ -38,6 +38,8 @@ export default async function Post({ params }: Props) {
 
   if (!post) notFound();
 
+  console.log(post);
+
   const date = post.publishDate
     ? new Date(post.publishDate).toLocaleDateString('en-US', {
         month: 'long',
@@ -53,7 +55,9 @@ export default async function Post({ params }: Props) {
 
       <RichText
         components={{
-          p: ({ children }) => <p className="text-gray-100">{children}</p>
+          p: ({ children }) => (
+            <p className="min-h-4 text-gray-100">{children}</p>
+          )
         }}>
         {post.content?.json.content}
       </RichText>

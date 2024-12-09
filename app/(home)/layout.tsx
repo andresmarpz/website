@@ -7,8 +7,7 @@ export default function HomeLayout({ children }: PropsWithChildren) {
     <main
       className={cn(
         GeistMono.className,
-        'text-[13px] [text-rendering:geometricPrecision]',
-        'container pt-24'
+        'text-[13px] [text-rendering:geometricPrecision]'
       )}>
       {children}
     </main>
