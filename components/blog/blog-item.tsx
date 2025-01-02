@@ -1,4 +1,5 @@
 import ViewCounter from '@/app/blog/view-counter';
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
@@ -10,11 +11,14 @@ interface Props {
 
 export default function BlogItem({ title, slug, date }: Props) {
   return (
-    <li className="py-2 text-gray-500" key={slug}>
+    <li className="py-2 text-neutral-300" key={slug}>
       <Link
         href={`/blog/${slug}`}
-        className="flex items-center justify-between gap-1 [&>h3]:hover:text-gray-300 [&>span]:hover:text-gray-400">
-        <h3 className="grow font-medium text-gray-400 transition-colors">
+        className={cn(
+          'flex items-center justify-between gap-1',
+          'outline-[0.5px] outline-offset-[6px] hover:outline hover:outline-neutral-600/50 [&>h3]:hover:text-white [&>span]:hover:text-white'
+        )}>
+        <h3 className="grow font-medium text-neutral-200 underline decoration-neutral-400/50 underline-offset-[3px] transition-colors">
           {title}
         </h3>
 
