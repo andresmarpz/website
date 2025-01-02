@@ -1,5 +1,6 @@
 import Anchor from '@/app/(home)/anchor';
 import BlogList from '@/components/blog/blog-list';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Andrés Martínez'
@@ -34,10 +35,10 @@ export default function Home() {
       </section>
 
       <section className="mt-12">
-        <h2 className="mt-12 text-neutral-200">me</h2>
+        <h2 className="mt-12 text-neutral-100">me</h2>
         <p className="mt-2">
           Started programming at age 13, curious about Minecraft server plugins,
-          learned Java and began experimenting., recreated a few of the most
+          learned Java and began experimenting, recreated a few of the most
           popular game-modes on servers at the time to sell on online forums.
         </p>
         <p className="mt-4">
@@ -48,13 +49,15 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="mt-12">
-        <h2 className="mt-12 text-neutral-200">work</h2>
+      {/* <section className="mt-12">
+        <h2 className="mt-12 text-neutral-100">work</h2>
         <p className="mt-2">building in progress.</p>
-      </section>
+      </section> */}
 
       <section className="mt-12">
-        <h2 className="text-neutral-200">writing</h2>
+        <Link href="/blog">
+          <h2 className="text-neutral-100">writing</h2>
+        </Link>
         <p className="mt-2">
           I write about things I&apos;m learning, my experiences and thoughts on
           design and technology.
@@ -65,7 +68,7 @@ export default function Home() {
       </section>
 
       <section className="mt-12">
-        <h2 className="mt-12 text-neutral-200">reach</h2>
+        <h2 className="mt-12 text-neutral-100">reach</h2>
         <div className="mt-2 flex flex-wrap gap-2">
           <span className="whitespace-nowrap">
             <span>connect on </span>
