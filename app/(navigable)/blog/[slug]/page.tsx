@@ -1,4 +1,4 @@
-import ViewTracker from '@/app/blog/view-tracker';
+import ViewTracker from '@/app/(navigable)/blog/view-tracker';
 import { getPost } from '@/lib/get-post';
 import { getPosts } from '@/lib/get-posts';
 import { RichText } from 'basehub/react-rich-text';
@@ -49,14 +49,17 @@ export default async function Post({ params }: Props) {
     : 'Unpublished';
 
   return (
-    <article>
+    <article className="text-neutral-400 prose text-[13px]">
       <h1 className="font-medium">{post._title}</h1>
-      <time className="mb-10 block text-sm text-gray-400">{date}</time>
+      <time className="mb-10 block text-sm text-neutral-500">{date}</time>
 
       <RichText
         components={{
-          p: ({ children }) => (
-            <p className="min-h-4 text-gray-100">{children}</p>
+          p: ({ children }) => <p className="min-h-[1lh]">{children}</p>,
+          a: ({ children, href }) => (
+            <a href={href} className="text-orange-400 underline">
+              {children}
+            </a>
           )
         }}>
         {post.content?.json.content}

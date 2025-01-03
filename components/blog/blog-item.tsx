@@ -1,4 +1,4 @@
-import ViewCounter from '@/app/blog/view-counter';
+import ViewCounter from '@/app/(navigable)/blog/view-counter';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { Suspense } from 'react';
