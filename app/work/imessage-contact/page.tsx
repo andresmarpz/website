@@ -14,7 +14,7 @@ export default function IMessageContact() {
 
 function Container({ children }: PropsWithChildren) {
   return (
-    <div className="aspect-[2/1] min-h-80 min-w-80 rounded-[40px] bg-neutral-100 p-4">
+    <div className="aspect-2/1 min-h-80 min-w-80 rounded-[40px] bg-neutral-100 p-4">
       {children}
     </div>
   );
