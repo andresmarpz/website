@@ -1,10 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import dynamic from 'next/dynamic';
 import { GeistMono } from 'geist/font/mono';
-
-const Clock = dynamic(() => import('@/components/footer/clock'));
 
 export default function Footer() {
   return (
