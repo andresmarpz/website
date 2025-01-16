@@ -1,6 +1,6 @@
 import BlogList from '@/components/blog/blog-list';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
 
 export default function Blog() {
   return (
