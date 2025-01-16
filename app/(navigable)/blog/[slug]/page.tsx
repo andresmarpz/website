@@ -38,8 +38,6 @@ export default async function Post({ params }: Props) {
 
   if (!post) notFound();
 
-  console.log(post);
-
   const date = post.publishDate
     ? new Date(post.publishDate).toLocaleDateString('en-US', {
         month: 'long',

@@ -36,8 +36,10 @@
 .footer-gradient {
   position: absolute;
   inset: 0;
+  top: -50%;
+  height: 150%;
   background-image: linear-gradient(
     rgba(0, 0, 0, 0) 0% 50%,
-    rgba(0, 0, 0, 0.5) 100%
+    rgba(0, 0, 0, 0.6) 100%
   );
 }
