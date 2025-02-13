@@ -2,6 +2,7 @@
 
 import Progress from '@/app/(navigable)/work/knob/progress';
 import { useEffect, useRef, useState } from 'react';
+import useSound from 'use-sound';
 
 export default function Knob({
   min,
@@ -12,6 +13,10 @@ export default function Knob({
   max: number;
   reductionPercentage?: number;
 }) {
+  const [playTick] = useSound('/assets/sounds/tick.mp3', {
+    interrupt: true,
+    volume: 0.5
+  });
   const elementRef = useRef<HTMLDivElement | null>(null);
 
   const [currentValue, setCurrentValue] = useState(min);
@@ -84,7 +89,10 @@ export default function Knob({
           min={min}
           max={max}
           value={currentValue}
-          onChange={(e) => setCurrentValue(e.target.value)}
+          onChange={(e) => {
+            setCurrentValue(e.target.value);
+            playTick();
+          }}
         />
       </label>
 
