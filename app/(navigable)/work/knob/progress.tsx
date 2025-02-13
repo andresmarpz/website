@@ -39,7 +39,8 @@ export default function Progress({
         strokeDashoffset={circumference * reduction}
         fill="none"
         stroke={background}
-        strokeLinecap="round"></circle>
+        strokeLinecap="round"
+      />
       <circle
         transform={`rotate(${rotate} ${center} ${center})`}
         id="path"
@@ -51,7 +52,8 @@ export default function Progress({
         strokeDashoffset={offset}
         fill="none"
         stroke={stroke}
-        strokeLinecap="round"></circle>
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
