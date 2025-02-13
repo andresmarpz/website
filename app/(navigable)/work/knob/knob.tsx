@@ -3,15 +3,21 @@
 import Progress from '@/app/(navigable)/work/knob/progress';
 import { useEffect, useRef, useState } from 'react';
 
-const MAX_VALUE = 600;
-
-export default function Knob() {
+export default function Knob({
+  min,
+  max,
+  reductionPercentage = 0
+}: {
+  min: number;
+  max: number;
+  reductionPercentage?: number;
+}) {
   const elementRef = useRef<HTMLDivElement | null>(null);
 
-  const [currentValue, setCurrentValue] = useState(100);
+  const [currentValue, setCurrentValue] = useState(min);
   const [isDragging, setIsDragging] = useState(false);
 
-  const currentPercentage = (currentValue * 100) / MAX_VALUE;
+  const currentPercentage = (currentValue * 100) / max;
 
   useEffect(() => {
     if (!elementRef) return;
@@ -43,10 +49,62 @@ export default function Knob() {
     };
   }, []);
 
-  // Reduction percentage
-  const REDUCTION = 10;
+  return (
+    <>
+      {/* Knob */}
+      <div
+        className="size-16 border rounded-full shadow-sm shadow-neutral-600/50 bg-neutral-900 border-neutral-800 relative"
+        ref={elementRef}
+        onMouseDown={(event) => {
+          setIsDragging(true);
+        }}>
+        {/* Thumb */}
+        <Thumb
+          reduction={reductionPercentage}
+          currentPercentage={currentPercentage}
+        />
+
+        {/* Progress */}
+        <Progress
+          size={100}
+          percentage={currentPercentage}
+          reduction={reductionPercentage}
+          className="absolute top-[-24%] left-[-25%] size-[150%] pointer-events-none"
+        />
+      </div>
+
+      <p className="text-center font-mono text-xl py-8">
+        {currentValue} / {max}
+      </p>
+
+      <label>
+        Slider
+        <input
+          type="range"
+          min={min}
+          max={max}
+          value={currentValue}
+          onChange={(e) => setCurrentValue(e.target.value)}
+        />
+      </label>
+
+      <div>
+        Debug:
+        <p>Dragging: {String(isDragging)}</p>
+      </div>
+    </>
+  );
+}
+
+function Thumb({
+  reduction,
+  currentPercentage
+}: {
+  reduction: number;
+  currentPercentage: number;
+}) {
   // Reduction degrees
-  const REDUCTION_DEGREES = (360 / 100) * REDUCTION;
+  const REDUCTION_DEGREES = (360 / 100) * reduction;
 
   const ANGLE = 360 - REDUCTION_DEGREES;
   const CURRENT_ANGLE_RAW = currentPercentage * (ANGLE / 100);
@@ -61,51 +119,12 @@ export default function Knob() {
   const top = `${50 + 37.5 * Math.sin(CURRENT_ANGLE_RADIANS)}%`;
 
   return (
-    <>
-      {/* Knob */}
-      <div
-        className="size-16 border rounded-full shadow-sm shadow-neutral-600/50 bg-neutral-900 border-neutral-800 relative"
-        ref={elementRef}
-        onMouseDown={(event) => {
-          setIsDragging(true);
-        }}>
-        {/* Thumb */}
-        <div
-          className="rounded-full size-2 bg-neutral-600 shadow-sm border border-neutral-500/50 absolute -translate-x-1/2 -translate-y-1/2"
-          style={{
-            left,
-            top
-          }}
-        />
-
-        {/* Progress */}
-        <Progress
-          size={100}
-          percentage={currentPercentage}
-          reduction={REDUCTION}
-          className="absolute top-[-24%] left-[-25%] size-[150%] pointer-events-none"
-        />
-      </div>
-
-      <p className="text-center font-mono text-xl py-8">
-        {currentValue} / {MAX_VALUE}
-      </p>
-
-      <label>
-        Slider
-        <input
-          type="range"
-          min={0}
-          max={MAX_VALUE}
-          value={currentValue}
-          onChange={(e) => setCurrentValue(e.target.value)}
-        />
-      </label>
-
-      <div>
-        Debug:
-        <p>Dragging: {String(isDragging)}</p>
-      </div>
-    </>
+    <div
+      className="rounded-full size-2 bg-neutral-600 shadow-sm border border-neutral-500/50 absolute -translate-x-1/2 -translate-y-1/2"
+      style={{
+        left,
+        top
+      }}
+    />
   );
 }
