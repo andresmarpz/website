@@ -15,11 +15,13 @@
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
+    "@neondatabase/serverless": "^1.0.2",
     "@next/mdx": "^15.1.7",
     "@planetscale/database": "latest",
     "@radix-ui/react-tooltip": "^1.1.8",
     "@types/mdx": "^2.0.13",
     "@vercel/postgres": "^0.10.0",
+    "@vercel/speed-insights": "^1.2.0",
     "basehub": "^7.5.32",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

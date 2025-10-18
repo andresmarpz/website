@@ -1,4 +1,5 @@
 import "~/app/globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistMono } from "geist/font/mono";
 import Footer from "~/components/footer";
 import { cn } from "~/lib/utils";
@@ -19,6 +20,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <main className="flex-1 pt-24">{children}</main>
         <Footer />
+
+        <SpeedInsights />
       </body>
     </html>
   );
