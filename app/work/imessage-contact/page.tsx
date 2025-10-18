@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren } from "react";
 
 export default function IMessageContact() {
   // We will have a centered container with a title and a description

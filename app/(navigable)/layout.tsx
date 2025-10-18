@@ -1,8 +1,8 @@
-import BackNavigation from '@/components/ui/back-navigation';
+import BackNavigation from "@/components/ui/back-navigation";
 
 export default function NavigableLayout({
   children,
-  back
+  back,
 }: {
   children: React.ReactNode;
   back: React.ReactNode;

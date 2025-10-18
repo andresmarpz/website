@@ -1,5 +1,5 @@
-import { getPosts } from '@/lib/get-posts';
-import { QueryGenqlSelection, basehub } from 'basehub';
+import { getPosts } from "@/lib/get-posts";
+import { QueryGenqlSelection, basehub } from "basehub";
 
 export async function getPost(slug: string) {
   const res = await basehub().query({
@@ -15,21 +15,21 @@ export async function getPost(slug: string) {
             markdown: true,
             json: {
               content: true,
-              toc: true
-            }
+              toc: true,
+            },
           },
           coverImage: { url: true },
           meta: {
             title: true,
             description: true,
             ogImage: {
-              url: true
-            }
+              url: true,
+            },
           },
-          publishDate: true
-        }
-      }
-    }
+          publishDate: true,
+        },
+      },
+    },
   });
 
   const [post] = res.blog.posts.items;

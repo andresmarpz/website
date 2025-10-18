@@ -1,9 +1,9 @@
-import Anchor from '@/app/(home)/anchor';
-import BlogList from '@/components/blog/blog-list';
-import Link from 'next/link';
+import Link from "next/link";
+import Anchor from "@/app/(home)/anchor";
+import BlogList from "@/components/blog/blog-list";
 
 export const metadata = {
-  title: 'Andrés Martínez'
+  title: "Andrés Martínez",
 };
 
 export const revalidate = 30;
@@ -24,11 +24,11 @@ export default function Home() {
           mastering the web one step at a time.
         </p>
         <p className="mt-4">
-          Working as a Senior Software Developer at{' '}
+          Working as a Senior Software Developer at{" "}
           <Anchor href="https://qubika.com" target="_blank">
             Qubika
           </Anchor>
-          . Studying Information Systems and Technologies at{' '}
+          . Studying Information Systems and Technologies at{" "}
           <Anchor href="https://www.ort.edu.uy/" target="_blank">
             ORT University
           </Anchor>
@@ -75,7 +75,7 @@ export default function Home() {
           <span className="whitespace-nowrap">
             <span>connect on </span>
             <Anchor href="https://x.com/andresmarpz" target="_blank">
-              {'𝕏'}
+              {"𝕏"}
             </Anchor>
             <span className="mx-1 text-neutral-400/50">·</span>
             <Anchor href="https://github.com/andresmarpz" target="_blank">
@@ -87,7 +87,7 @@ export default function Home() {
             </Anchor>
           </span>
           <span>
-            — or send me an email at{' '}
+            — or send me an email at{" "}
             <Anchor href="mailto:hello@andrs.me" target="_blank">
               hello@andrs.me
             </Anchor>

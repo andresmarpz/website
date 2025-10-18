@@ -1,8 +1,8 @@
-import ViewTracker from '@/app/(navigable)/blog/view-tracker';
-import { getPost } from '@/lib/get-post';
-import { getPosts } from '@/lib/get-posts';
-import { RichText } from 'basehub/react-rich-text';
-import { notFound } from 'next/navigation';
+import ViewTracker from "@/app/(navigable)/blog/view-tracker";
+import { getPost } from "@/lib/get-post";
+import { getPosts } from "@/lib/get-posts";
+import { RichText } from "basehub/react-rich-text";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: Promise<{
@@ -14,7 +14,7 @@ export async function generateStaticParams() {
   const posts = await getPosts();
 
   return posts.map((post) => ({
-    slug: post._slug
+    slug: post._slug,
   }));
 }
 
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props) {
 
   return {
     title: post._title,
-    description: post.subtitle
+    description: post.subtitle,
   };
 }
 
@@ -39,12 +39,12 @@ export default async function Post({ params }: Props) {
   if (!post) notFound();
 
   const date = post.publishDate
-    ? new Date(post.publishDate).toLocaleDateString('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric'
+    ? new Date(post.publishDate).toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
       })
-    : 'Unpublished';
+    : "Unpublished";
 
   return (
     <article className="text-neutral-400 prose text-[13px]">
@@ -58,8 +58,9 @@ export default async function Post({ params }: Props) {
             <a href={href} className="text-orange-400 underline">
               {children}
             </a>
-          )
-        }}>
+          ),
+        }}
+      >
         {post.content?.json.content}
       </RichText>
 

@@ -1,5 +1,5 @@
-import BlogItem from '@/components/blog/blog-item';
-import { getPosts } from '@/lib/get-posts';
+import BlogItem from "@/components/blog/blog-item";
+import { getPosts } from "@/lib/get-posts";
 
 interface Props {
   length?: number;

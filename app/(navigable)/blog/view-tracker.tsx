@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import useSWR from 'swr';
+import useSWR from "swr";
 
 export default function ViewTracker({ slug }: { slug: string }) {
   useSWR(`/api/views/${slug}`, () =>
     fetch(`/api/views`, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify({
-        slug
-      })
-    })
+        slug,
+      }),
+    }),
   );
 
   return null;

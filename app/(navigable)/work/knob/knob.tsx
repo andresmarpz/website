@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import Progress from '@/app/(navigable)/work/knob/progress';
+import Progress from "@/app/(navigable)/work/knob/progress";
 import {
   degreesToRadians,
-  radiansToDegrees
-} from '@/app/(navigable)/work/knob/utils';
+  radiansToDegrees,
+} from "@/app/(navigable)/work/knob/utils";
 import {
   MouseEvent,
   MouseEventHandler,
   useCallback,
   useEffect,
   useRef,
-  useState
-} from 'react';
-import useSound from 'use-sound';
+  useState,
+} from "react";
+import useSound from "use-sound";
 
 interface InternalState {
   isDragging: boolean;
@@ -24,7 +24,7 @@ export default function Knob({
   min,
   max,
   onValueChange,
-  reductionPercentage = 0
+  reductionPercentage = 0,
 }: {
   min: number;
   max: number;
@@ -32,8 +32,8 @@ export default function Knob({
   reductionPercentage?: number;
 }) {
   // Ticking sound
-  const [_playTick] = useSound('/assets/sounds/tick.mp3', {
-    volume: 0.015
+  const [_playTick] = useSound("/assets/sounds/tick.mp3", {
+    volume: 0.015,
   });
 
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -49,14 +49,14 @@ export default function Knob({
   // State
   const [currentValue, _setCurrentValue] = useState<number>(min);
   const [_internalState, _setInternalState] = useState<InternalState>({
-    isDragging: false
+    isDragging: false,
   });
 
   const setCurrentKnobValue = (
-    newValue: number | ((lastValue: number) => number)
+    newValue: number | ((lastValue: number) => number),
   ) => {
     const computedValue =
-      typeof newValue === 'function' ? newValue(currentValue) : newValue;
+      typeof newValue === "function" ? newValue(currentValue) : newValue;
 
     if (computedValue !== currentValue) {
       _setCurrentValue(computedValue);
@@ -80,7 +80,7 @@ export default function Knob({
 
     _setInternalState({
       isDragging: true,
-      initialMousePosition
+      initialMousePosition,
     });
   }, []);
 
@@ -89,7 +89,7 @@ export default function Knob({
    */
   const handleElementMouseUp = useCallback((event: MouseEvent) => {
     _setInternalState({
-      isDragging: false
+      isDragging: false,
     });
   }, []);
 
@@ -119,11 +119,11 @@ export default function Knob({
       const relativeY = mouseY - centerY;
 
       const initialAngleRelativeToCenter = radiansToDegrees(
-        Math.atan2(initialRelativeY, initialRelativeX)
+        Math.atan2(initialRelativeY, initialRelativeX),
       );
 
       const currentAngleRelativeToCenter = radiansToDegrees(
-        Math.atan2(relativeY, relativeX)
+        Math.atan2(relativeY, relativeX),
       );
 
       let angleDelta =
@@ -157,29 +157,29 @@ export default function Knob({
       // Update initial position for next movement
       _setInternalState((prev) => ({
         ...prev,
-        initialMousePosition: [event.clientX, event.clientY]
+        initialMousePosition: [event.clientX, event.clientY],
       }));
     },
-    [_internalState.isDragging, _internalState.initialMousePosition]
+    [_internalState.isDragging, _internalState.initialMousePosition],
   );
 
   useEffect(() => {
     if (!elementRef) return;
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [handleMouseMove]);
 
   useEffect(() => {
     if (!elementRef) return;
 
-    window.addEventListener('mouseup', handleElementMouseUp);
+    window.addEventListener("mouseup", handleElementMouseUp);
 
     return () => {
-      window.removeEventListener('mouseup', handleElementMouseUp);
+      window.removeEventListener("mouseup", handleElementMouseUp);
     };
   }, [handleElementMouseUp]);
 
@@ -191,7 +191,8 @@ export default function Knob({
       <div
         className="size-16 border rounded-full shadow-sm shadow-neutral-600/50 bg-neutral-900 border-neutral-800 relative select-none"
         ref={elementRef}
-        onMouseDown={handleElementMouseDown}>
+        onMouseDown={handleElementMouseDown}
+      >
         {/* Thumb */}
         <Thumb
           reduction={reductionPercentage}
@@ -216,7 +217,7 @@ export default function Knob({
 
 function Thumb({
   reduction,
-  currentPercentage
+  currentPercentage,
 }: {
   reduction: number;
   currentPercentage: number;
@@ -241,7 +242,7 @@ function Thumb({
       className="rounded-full size-2 bg-neutral-600 shadow-sm border border-neutral-500/50 absolute -translate-x-1/2 -translate-y-1/2"
       style={{
         left,
-        top
+        top,
       }}
     />
   );

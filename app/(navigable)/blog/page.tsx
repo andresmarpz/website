@@ -1,4 +1,4 @@
-import BlogList from '@/components/blog/blog-list';
+import BlogList from "@/components/blog/blog-list";
 
 export const revalidate = 60;
 

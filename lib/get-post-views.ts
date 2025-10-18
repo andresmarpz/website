@@ -1,6 +1,6 @@
-import { db } from '@/db';
-import { posts } from '@/db/schema';
-import { eq } from 'drizzle-orm';
+import { db } from "@/db";
+import { posts } from "@/db/schema";
+import { eq } from "drizzle-orm";
 
 export const getPostViews = async (slug: string) => {
   const results = await db

@@ -1,12 +1,12 @@
-'use client';
-import { cn } from '@/lib/utils';
-import { useId, useState } from 'react';
+"use client";
+import { cn } from "@/lib/utils";
+import { useId, useState } from "react";
 
 export default function Progress({
   size = 128,
   percentage = 50,
   reduction = 0,
-  className
+  className,
 }: {
   size: number;
   percentage: number;
@@ -17,8 +17,8 @@ export default function Progress({
   const progress = percentage,
     strokeWidth = 4,
     ballStrokeWidth = 16,
-    background = 'rgb(25, 25, 25)',
-    stroke = 'rgb(100, 100, 100)';
+    background = "rgb(25, 25, 25)",
+    stroke = "rgb(100, 100, 100)";
 
   const center = size / 2;
   const rotate = 90 + 180 * reduction;
@@ -27,7 +27,7 @@ export default function Progress({
   const offset = (circumference * (100 - progress * (1 - reduction))) / 100;
 
   return (
-    <svg viewBox={`0 0 ${size} ${size}`} className={cn('block', className)}>
+    <svg viewBox={`0 0 ${size} ${size}`} className={cn("block", className)}>
       <circle
         transform={`rotate(${rotate} ${center} ${center})`}
         id="path"

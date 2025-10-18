@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Knob from '@/app/(navigable)/work/knob/knob';
-import { useState } from 'react';
+import Knob from "@/app/(navigable)/work/knob/knob";
+import { useState } from "react";
 
 export default function KnobPage() {
   const [r, setR] = useState(1);
@@ -14,8 +14,9 @@ export default function KnobPage() {
       <div
         className="h-40 w-full rounded-lg border border-neutral-800 shadow"
         style={{
-          backgroundColor: `rgb(${r}, ${g}, ${b})`
-        }}></div>
+          backgroundColor: `rgb(${r}, ${g}, ${b})`,
+        }}
+      ></div>
 
       <div className="flex gap-8 py-8">
         <div className="flex flex-col">

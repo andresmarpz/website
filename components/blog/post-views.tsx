@@ -1,4 +1,4 @@
-import { getPostViews } from '@/lib/get-post-views';
+import { getPostViews } from "@/lib/get-post-views";
 
 interface Props {
   slug: string;
