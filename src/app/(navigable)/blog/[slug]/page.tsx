@@ -1,7 +1,5 @@
 import { Effect, Layer } from "effect";
-import fs from "fs";
 import type { Metadata } from "next";
-import path from "path";
 import { PostService, PostServiceImpl } from "~/services/post.service";
 
 const getPost = (slug: string) =>
