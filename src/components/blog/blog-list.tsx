@@ -1,12 +1,11 @@
 import BlogItem from "~/components/blog/blog-item";
-import { getPosts } from "~/lib/get-posts";
 
 interface Props {
   length?: number;
 }
 
 export default async function BlogList({ length }: Props) {
-  const posts = await getPosts();
+  const posts: any[] = []
 
   return (
     <ul className="m-auto flex flex-col gap-1">

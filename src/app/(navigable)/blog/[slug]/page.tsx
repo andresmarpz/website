@@ -1,45 +1,62 @@
-import { RichText } from "basehub/react-rich-text";
-import { notFound } from "next/navigation";
-import ViewTracker from "~/app/(navigable)/blog/view-tracker";
-import { getPost } from "~/lib/get-post";
-import { getPosts } from "~/lib/get-posts";
+import { Effect, Layer } from "effect";
+import fs from "fs";
+import type { Metadata } from "next";
+import path from "path";
+import { PostService, PostServiceImpl } from "~/services/post.service";
 
-interface Props {
-  params: Promise<{
-    slug: string;
-  }>;
-}
+const getPost = (slug: string) =>
+  Effect.runPromise(
+    Effect.gen(function* () {
+      const posts = yield* PostService;
 
-export async function generateStaticParams() {
-  const posts = await getPosts();
+      const post = yield* posts.getPostBySlug(slug);
 
-  return posts.map((post) => ({
-    slug: post._slug,
-  }));
-}
+      return yield* Effect.succeed(post);
+    }).pipe(Effect.provide(Layer.succeed(PostService, new PostServiceImpl()))),
+  );
 
-export async function generateMetadata({ params }: Props) {
+const getAllPosts = () =>
+  Effect.runPromise(
+    Effect.gen(function* () {
+      const postService = yield* PostService;
+
+      const allPosts = yield* postService.getAllPosts();
+      return yield* Effect.succeed(allPosts);
+    }).pipe(Effect.provide(Layer.succeed(PostService, new PostServiceImpl()))),
+  );
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
+
   const post = await getPost(slug);
 
-  if (!post) {
-    return notFound();
-  }
-
   return {
-    title: post._title,
-    description: post.subtitle,
+    title: post.metadata.title,
+    description: post.metadata.description,
   };
 }
 
-export default async function Post({ params }: Props) {
+export async function generateStaticParams() {
+  const allPosts = await getAllPosts();
+  return allPosts.map(({ metadata }) => ({
+    slug: metadata.slug,
+  }));
+}
+
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
-  const post = await getPost(slug);
+  const { Component, metadata } = await getPost(slug);
 
-  if (!post) notFound();
-
-  const date = post.publishDate
-    ? new Date(post.publishDate).toLocaleDateString("en-US", {
+  const date = metadata.date
+    ? new Date(metadata.date).toLocaleDateString("en-US", {
         month: "long",
         day: "numeric",
         year: "numeric",
@@ -48,23 +65,10 @@ export default async function Post({ params }: Props) {
 
   return (
     <article className="text-neutral-400 prose text-[13px]">
-      <h1 className="font-medium">{post._title}</h1>
-      <time className="mb-10 block text-sm text-neutral-500">{date}</time>
+      <h1 className="font-medium">{metadata.title}</h1>
+      <time className="mb-10 block text-[12px] text-neutral-500">{date}</time>
 
-      <RichText
-        components={{
-          p: ({ children }) => <p className="min-h-[1lh]">{children}</p>,
-          a: ({ children, href }) => (
-            <a href={href} className="text-orange-400 underline">
-              {children}
-            </a>
-          ),
-        }}
-      >
-        {post.content?.json.content}
-      </RichText>
-
-      <ViewTracker slug={slug} />
+      <Component />
     </article>
   );
 }
