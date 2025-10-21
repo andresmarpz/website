@@ -6,5 +6,6 @@ export const getPostViews = async (slug: string) => {
   const res = await db.query.posts.findFirst({
     where: eq(posts.slug, slug),
   });
+
   return res?.views ?? null;
 };

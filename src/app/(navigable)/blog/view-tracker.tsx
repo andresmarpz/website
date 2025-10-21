@@ -1,16 +1,10 @@
-"use client";
+import { headers } from "next/headers";
+import { incrementPostViews } from "~/lib/increment-post-views";
 
-import useSWR from "swr";
+export default async function ViewTracker({ slug }: { slug: string }) {
+  await headers();
 
-export default function ViewTracker({ slug }: { slug: string }) {
-  useSWR(`/api/views/${slug}`, () =>
-    fetch(`/api/views`, {
-      method: "POST",
-      body: JSON.stringify({
-        slug,
-      }),
-    }),
-  );
+  await incrementPostViews(slug);
 
   return null;
 }

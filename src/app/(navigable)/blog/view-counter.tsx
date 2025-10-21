@@ -5,8 +5,7 @@ interface Props {
 }
 
 export default async function ViewCounter({ slug }: Props) {
-  // const views = (await getPostViews(slug)) ?? 0;
-  const views = 30;
+  const views = (await getPostViews(slug)) ?? 0;
 
   return (
     <span className="animation-fill-mode-both animate-slideFadeUp">

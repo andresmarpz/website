@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import ViewCounter from "~/app/(navigable)/blog/view-counter";
+import ViewTracker from "~/app/(navigable)/blog/view-tracker";
 import { getAllPosts } from "~/lib/get-all-posts";
 import { getPost } from "~/lib/get-post";
 
@@ -46,6 +49,10 @@ export default async function BlogPost({
       <time className="mb-10 block text-[12px] text-neutral-500">{date}</time>
 
       <Component />
+
+      <Suspense fallback={null}>
+        <ViewTracker slug={slug} />
+      </Suspense>
     </article>
   );
 }
