@@ -1,5 +1,3 @@
-import BackNavigation from "~/components/ui/back-navigation";
-
 export default function NavigableLayout({
   children,
   back,

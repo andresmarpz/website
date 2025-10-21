@@ -1,27 +1,6 @@
-import { Effect, Layer } from "effect";
 import type { Metadata } from "next";
-import { PostService, PostServiceImpl } from "~/services/post.service";
-
-const getPost = (slug: string) =>
-  Effect.runPromise(
-    Effect.gen(function* () {
-      const posts = yield* PostService;
-
-      const post = yield* posts.getPostBySlug(slug);
-
-      return yield* Effect.succeed(post);
-    }).pipe(Effect.provide(Layer.succeed(PostService, new PostServiceImpl()))),
-  );
-
-const getAllPosts = () =>
-  Effect.runPromise(
-    Effect.gen(function* () {
-      const postService = yield* PostService;
-
-      const allPosts = yield* postService.getAllPosts();
-      return yield* Effect.succeed(allPosts);
-    }).pipe(Effect.provide(Layer.succeed(PostService, new PostServiceImpl()))),
-  );
+import { getAllPosts } from "~/lib/get-all-posts";
+import { getPost } from "~/lib/get-post";
 
 export async function generateMetadata({
   params,

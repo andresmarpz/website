@@ -23,7 +23,7 @@ export default function BlogItem({ title, slug, date }: Props) {
         {/* Top left */}
         <div
           className="absolute left-[-6.25px] top-[-6.25px] hidden group-hover:block"
-          style={{ "--cross-size": "10px" } as any}
+          style={{ "--cross-size": "10px" } as Record<string, string>}
         >
           <div className="absolute left-0 top-0 h-[var(--cross-size)] w-[0.5px] -translate-x-1/2 -translate-y-1/2 bg-neutral-500" />
           <div className="absolute left-0 top-0 h-[0.5px] w-[var(--cross-size)] -translate-x-1/2 -translate-y-1/2 bg-neutral-500" />
@@ -31,7 +31,7 @@ export default function BlogItem({ title, slug, date }: Props) {
         {/* Bottom right */}
         <div
           className="absolute bottom-[-6.25px] right-[-6.25px] hidden group-hover:block"
-          style={{ "--cross-size": "10px" } as any}
+          style={{ "--cross-size": "10px" } as Record<string, string>}
         >
           <div className="absolute left-0 top-0 h-[var(--cross-size)] w-[0.5px] -translate-x-1/2 -translate-y-1/2 bg-neutral-500" />
           <div className="absolute left-0 top-0 h-[0.5px] w-[var(--cross-size)] -translate-x-1/2 -translate-y-1/2 bg-neutral-500" />
