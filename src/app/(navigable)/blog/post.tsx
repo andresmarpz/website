@@ -1,6 +1,7 @@
 import { getPost } from "~/lib/get-post";
 
 export default async function Post({ slug }: { slug: string }) {
+  "use cache";
   const { metadata, Component } = await getPost(slug);
 
   const date = metadata.date
