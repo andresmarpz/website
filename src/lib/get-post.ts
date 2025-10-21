@@ -1,8 +1,8 @@
 import { Effect, Layer } from "effect";
 import { PostService, PostServiceImpl } from "~/services/post.service";
 
-export const getPost = (slug: string) =>
-  Effect.runPromise(
+export const getPost = async (slug: string) => {
+  const res = await Effect.runPromise(
     Effect.gen(function* () {
       const posts = yield* PostService;
 
@@ -11,3 +11,6 @@ export const getPost = (slug: string) =>
       return yield* Effect.succeed(post);
     }).pipe(Effect.provide(Layer.succeed(PostService, new PostServiceImpl()))),
   );
+
+  return res;
+};

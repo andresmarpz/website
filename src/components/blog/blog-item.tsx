@@ -9,7 +9,7 @@ interface Props {
   date: string;
 }
 
-export default function BlogItem({ title, slug, date }: Props) {
+export default async function BlogItem({ title, slug, date }: Props) {
   return (
     <li className="py-2 text-neutral-300" key={slug}>
       <Link

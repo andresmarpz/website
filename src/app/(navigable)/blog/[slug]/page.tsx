@@ -1,7 +1,8 @@
+"use cache";
+
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import ViewCounter from "~/app/(navigable)/blog/view-counter";
-import ViewTracker from "~/app/(navigable)/blog/view-tracker";
+import Post from "~/app/(navigable)/blog/post";
 import { getAllPosts } from "~/lib/get-all-posts";
 import { getPost } from "~/lib/get-post";
 
@@ -32,27 +33,8 @@ export default async function BlogPost({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  "use cache";
   const { slug } = await params;
-  const { Component, metadata } = await getPost(slug);
 
-  const date = metadata.date
-    ? new Date(metadata.date).toLocaleDateString("en-US", {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-      })
-    : "Unpublished";
-
-  return (
-    <article className="text-neutral-400 prose text-[13px]">
-      <h1 className="font-medium">{metadata.title}</h1>
-      <time className="mb-10 block text-[12px] text-neutral-500">{date}</time>
-
-      <Component />
-
-      <Suspense fallback={null}>
-        <ViewTracker slug={slug} />
-      </Suspense>
-    </article>
-  );
+  return <Post slug={slug} />;
 }

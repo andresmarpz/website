@@ -6,6 +6,7 @@ interface Props {
 }
 
 export default async function BlogList({ length }: Props) {
+  "use cache";
   const posts = await getAllPosts();
 
   return (

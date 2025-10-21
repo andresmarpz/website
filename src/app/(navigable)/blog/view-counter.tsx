@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache";
 import { getPostViews } from "~/lib/get-post-views";
 
 interface Props {
@@ -5,6 +6,10 @@ interface Props {
 }
 
 export default async function ViewCounter({ slug }: Props) {
+  "use cache";
+
+  cacheLife({ stale: 5, revalidate: 30, expire: 600 });
+
   const views = (await getPostViews(slug)) ?? 0;
 
   return (

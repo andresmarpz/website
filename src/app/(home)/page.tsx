@@ -6,8 +6,6 @@ export const metadata = {
   title: "Andrés Martínez",
 };
 
-export const revalidate = 30;
-
 export default function Home() {
   return (
     <main className="mb-32 text-neutral-400">
