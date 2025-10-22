@@ -9,7 +9,7 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="mb-32 text-neutral-400">
-      <h1 className='text-sm font-medium text-stone-100 slide-in-from-top-2 [font-feature-setting:"kern","calt","case"] motion-safe:fade-in'>
+      <h1 className='text-sm font-medium text-stone-100 [font-feature-setting:"kern","calt","case"] motion-safe:fade-in'>
         Andrés Martínez
       </h1>
       <p className="text-neutral-500">canelones, uy.</p>

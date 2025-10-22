@@ -42,7 +42,7 @@ export default async function BlogItem({ title, slug, date }: Props) {
 
         <span
           className={
-            "ml-1 flex items-center gap-1 whitespace-nowrap transition-colors"
+            "ml-1 flex items-center gap-1 whitespace-nowrap transition-colors text-stone-400"
           }
         >
           <Suspense

@@ -16,7 +16,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={cn(
           GeistMono.variable,
           "flex min-h-screen flex-col bg-neutral-950",
-          "font-mono text-neutral-100 text-[13.5px]",
+          "font-mono text-neutral-100 text-sm",
           "[text-rendering:geometricPrecision]",
         )}
       >

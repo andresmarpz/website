@@ -13,9 +13,11 @@ export default async function Post({ slug }: { slug: string }) {
     : "Unpublished";
 
   return (
-    <article className="text-neutral-400 prose text-[13px]">
-      <h1 className="font-medium">{metadata.title}</h1>
-      <time className="mb-10 block text-[12px] text-neutral-500">{date}</time>
+    <article className="text-neutral-400">
+      <h1 className="font-medium text-stone-100 [font-feature-settings:'kern','calt','case']">
+        {metadata.title}
+      </h1>
+      <time className="mb-10 block text-[13px] text-neutral-500">{date}</time>
 
       <Component />
     </article>
