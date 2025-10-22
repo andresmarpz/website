@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Anchor from "~/app/(home)/anchor";
 import BlogList from "~/components/blog/blog-list";
+import Anchor from "~/components/ui/anchor";
 
 export const metadata = {
   title: "Andrés Martínez",

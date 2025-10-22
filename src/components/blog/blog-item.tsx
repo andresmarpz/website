@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import ViewCounter from "~/app/(navigable)/blog/view-counter";
+import ViewCounter from "~/app/blog/view-counter";
 import { cn } from "~/lib/utils";
 
 interface Props {
@@ -36,7 +36,7 @@ export default async function BlogItem({ title, slug, date }: Props) {
           <div className="absolute left-0 top-0 h-[var(--cross-size)] w-[0.5px] -translate-x-1/2 -translate-y-1/2 bg-neutral-500" />
           <div className="absolute left-0 top-0 h-[0.5px] w-[var(--cross-size)] -translate-x-1/2 -translate-y-1/2 bg-neutral-500" />
         </div>
-        <h3 className="grow font-medium text-neutral-200 underline decoration-neutral-400/50 underline-offset-[3px] transition-colors">
+        <h3 className="grow font-medium text-neutral-200 underline decoration-neutral-400/50 underline-offset-4 transition-colors">
           {title}
         </h3>
 

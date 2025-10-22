@@ -28,7 +28,7 @@ export class PostServiceImpl implements IPostService {
     Effect.gen(function* () {
       return yield* Effect.tryPromise({
         try: () =>
-          import(`~/app/(navigable)/blog/_posts/${path}.mdx`)
+          import(`~/app/blog/_posts/${path}.mdx`)
             .then((module) => [
               module.default as React.ComponentType<unknown>,
               module.metadata,
@@ -50,12 +50,7 @@ export class PostServiceImpl implements IPostService {
     });
 
   _getPostsFiles = Effect.gen(function* () {
-    const relativePathFromRoot = path.join(
-      "app",
-      "(navigable)",
-      "blog",
-      "_posts",
-    );
+    const relativePathFromRoot = path.join("app", "blog", "_posts");
     const postsDir = path.join(process.cwd(), "src", relativePathFromRoot);
     const files = yield* Effect.tryPromise(() =>
       fs.readdir(postsDir, { withFileTypes: true }),

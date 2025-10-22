@@ -15,10 +15,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={cn(
           GeistMono.variable,
-          "flex min-h-screen flex-col bg-neutral-950 font-mono text-neutral-100 text-sm",
+          "flex min-h-screen flex-col bg-neutral-950",
+          "font-mono text-neutral-100 text-[13.5px]",
+          "[text-rendering:geometricPrecision]",
         )}
       >
-        <main className="flex-1 pt-24">{children}</main>
+        <main className="flex-1 pt-24 container px-4">{children}</main>
         <Footer />
 
         <SpeedInsights />

@@ -1,8 +1,7 @@
 "use cache";
 
 import type { Metadata } from "next";
-import { Suspense } from "react";
-import Post from "~/app/(navigable)/blog/post";
+import Post from "~/app/blog/post";
 import { getAllPosts } from "~/lib/get-all-posts";
 import { getPost } from "~/lib/get-post";
 
