@@ -4,6 +4,11 @@
       "source": "/cv",
       "destination": "/andres-martinez-senior-full-stack-engineer-2026.pdf",
       "permanent": false
+    },
+    {
+      "source": "/loom-double",
+      "destination": "https://www.loom.com/share/9505051f0a2e4c07b58e5e2a9da4147f",
+      "permanent": false
     }
   ]
 }
