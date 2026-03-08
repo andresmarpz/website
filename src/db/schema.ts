@@ -7,7 +7,5 @@ export const posts = pgTable(
     slug: text("slug").notNull(),
     views: integer("views").default(0),
   },
-  (table) => ([
-    uniqueIndex("slug_unique_index").on(table.slug),
-  ])
+  (table) => [uniqueIndex("slug_unique_index").on(table.slug)],
 );
